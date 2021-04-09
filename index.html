@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--TODO : A la française : adapter le caractère à en majuscule-->
+<!--TODO : Toutes les div main item devraient probablement avoir une div texte + une div validate, la deuxième étant en display none par défaut-->
+<html>
+
+    <header> 
+        <title>Ohmyfood</title>
+    </header>
+
+    <body>
+        <header>
+            <h1>Ohmyfood</h1>
+
+            <div id="reservation">
+                <h2>Réservez le menu qui vous convient</h2>
+                <p>Découvrez des restautants d'exception,<br/> sélectionnés par nos soins</p>
+                <a href="#Restaurants">
+                    <input form="button" value="Explorer nos restaurants" id="btn_commande" />
+                </a>
+            </div>
+        </header>
+
+        <!-- Sections fonctionnement + restau-->
+        <div id="Main">
+            <section id="fonctionnement">
+                <h2>Fonctionnement</h2>
+                <div></div>
+            </section>
+
+            <section id="Restaurants">
+                <h2>Restaurants</h2>
+                <!--Restau 1-->
+                <div id="cartes_restautant_wraper">
+                    <div class="carte_restaurant">
+                        <a href="restau1.html">
+                            <p><img src="#" alt="Restaurant - La palette du goût"/></p>
+                            <div class="carte_restaurant__txt">
+                                <h4>La palette du goût</h4>
+                                <p>Ménilmontant</p>
+                                <i>Icone keur</i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="carte_restaurant">
+                        <a href="restau2.html">
+                            <p><img src="#" alt="Restaurant - La note enchantée"/></p>
+                            <div class="carte_restaurant__txt">
+                                <h4>La note enchantée</h4>
+                                <p>Charonne</p>
+                                <i>Icone keur</i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="carte_restaurant">
+                        <a href="restau3.html">
+                            <p><img src="#" alt="Restutant - A la française"/></p>
+                            <div class="carte_restaurant__txt">
+                                <h4>A la française</h4>
+                                <p>Cité Rouge</p>
+                                <i>Icone keur</i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="carte_restaurant">
+                        <a href ="restau4.html">
+                            <p><img src="#" alt="Restaurant - Le délice des sens"/></p>
+                            <div class="carte_restaurant__txt">
+                                <h4>Le délice des sens</h4>
+                                <p>Folie-Méricourt</p>
+                                <i>Icone keur</i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <h3>ohmyfood</h3>
+            <ul>
+                <li><i>ifourchettecouteau</i> Proposer un restaurant </li>
+                <li><i>maindanslamain</i> Devenir partenaire</li>
+                <li>Mentions légales</li>
+                <li>Contact</li>
+            </ul>
+        </footer>
+    </body>
+
+</html>
