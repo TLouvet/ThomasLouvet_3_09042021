@@ -1,0 +1,220 @@
+/*Var*/
+$primary-color: #9356DC; 
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0; 
+$mobile-sidepadding: 20px;
+$accueil-mobile-restautantheight: 250px;
+$homepage-mobile-imgheight: 175px;
+$bplist: 600px 1024px 1440px;
+
+$light-background: rgb(245,245,245);
+$shadow-light:rgb(220,220,220);
+
+
+@mixin global-sidepadding($sidepad: $mobile-sidepadding){ /*devrait changer en fonction du bp*/
+	padding: 0 $sidepad;
+}
+
+@mixin globalfooter{
+	@include global-sidepadding();
+	background-color: black;
+	color: white;
+}
+
+@mixin center-text{
+	text-align: center;
+}
+
+
+body{
+	margin:0;
+	font-family: "Roboto";
+}
+
+ul{
+	padding-left: 0;
+	list-style-type: none;
+}
+
+#reservation{
+	@include global-sidepadding();
+	@include center-text();
+}
+
+header{
+	@include global-sidepadding();
+	text-align: center;
+	box-shadow: 0 5px 10px $shadow-light;
+	h1{
+		font-family: "Shrikhand";
+		margin-bottom: 0;
+	}
+}
+
+.localisation{
+	@include global-sidepadding();
+	display: flex;
+	background-color: $shadow-light;
+	justify-content: center;
+	align-items: center;
+	i{
+		width:30px;
+	}
+}
+
+#main{
+
+	#reservation{
+		background-color: $light-background;
+		@include global-sidepadding();
+		padding-top: 45px;
+		padding-bottom:55px;
+		h2{
+			margin-top: 0;
+		}
+		input{
+			background-color: $primary-color;
+			color:white;
+			border-radius: 30px;
+			box-shadow: 0 5px 5px $shadow-light;
+			font-size: 1.1em;
+			border: none;
+			padding: 15px 25px;
+		}
+	}
+	#fonctionnement{
+		@include global-sidepadding();
+		padding-top: 50px; /*COULD BE ????*/
+		padding-bottom:55px;
+		h2{
+			margin-top:0;
+			margin-bottom: 25px;
+		}
+		div{
+			height:75px;
+			line-height: 75px;
+			border-radius: 20px;
+			background-color: $light-background;
+			box-shadow: 0 5px 10px $shadow-light;
+			margin-bottom: 25px;
+			margin-left: 10px;
+			padding-left:35px;
+			i{
+				color:grey;
+				width:40px;
+			}
+			&:hover{
+				background-color: lighten($primary-color, 35%);
+				i{
+					color:$primary-color;
+				}
+			}
+		}
+	}
+	#restaurants{
+		background-color: $light-background;
+		@include global-sidepadding();
+		padding-bottom: 55px;
+		padding-top:50px; /*COULD BE ???*/
+		h2{
+			margin-top:0;
+			margin-bottom:25px;
+		}
+		.carte_restaurant{
+			height:$accueil-mobile-restautantheight; /*devrait potentiellement changer selon bp*/
+			background-color: white;
+			border-radius: 20px;
+			box-shadow:0 0 10px $shadow-light;
+			margin-bottom: 20px;
+			position: relative;
+			a{
+				color: black;
+				text-decoration: none;
+				&:hover{
+					color: $secondary-color;
+				}
+				
+			}
+			i{
+				position: absolute;
+				right:25px;
+				bottom:25px;
+			}
+			.far{
+				transition: opacity 400ms;
+				&:hover{
+					opacity: 0;
+				}
+			}
+			.fas{
+				opacity: 0;
+				color: yellow;
+				transition: opacity 400ms;
+				/*&:hover{
+					opacity: 1;
+				}*/
+			}
+			img{
+				top:0;
+				height:$homepage-mobile-imgheight; /*devrait changer selon bp*/
+				width:100%;
+				border-radius: 20px 20px 0 0;
+				object-fit: cover;
+			}
+			&__txt{
+				@include global-sidepadding(15px);
+				h4 {
+					margin:0;
+				}
+				p{
+					margin:0;
+				}
+
+			}
+			&__nv
+			{
+				position: absolute;
+				background-color: $tertiary-color;
+				color: darken($tertiary-color,45%);
+				border-radius: 5px;
+				width: 23.5%;
+				height: 30px;
+				top:15px;
+				right:4%;
+				text-align: center;
+				line-height: 30px;
+			}
+		}
+	}
+
+}
+
+footer{
+	@include globalfooter();
+	padding-bottom: 30px;
+	h3{
+		font-family: "Shrikhand";
+		margin-top: 0;
+		padding-top:25px;
+	}
+	ul{
+		li{
+			margin-bottom: 10px;
+			i{
+				width:25px;
+			}
+			a{
+				color: white;
+				text-decoration: none;
+				&:hover{
+					color:$primary-color;
+				}
+			}
+			em{
+				font-weight: bold;
+				font-style: none;
+			}
+		}
+	}
+}
+

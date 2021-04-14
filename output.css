@@ -1,0 +1,199 @@
+/*Var*/
+body {
+  margin: 0;
+  font-family: "Roboto";
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+#reservation {
+  /*devrait changer en fonction du bp*/
+  padding: 0 20px;
+  text-align: center;
+}
+
+header {
+  /*devrait changer en fonction du bp*/
+  padding: 0 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px gainsboro;
+}
+header h1 {
+  font-family: "Shrikhand";
+  margin-bottom: 0;
+}
+
+.localisation {
+  /*devrait changer en fonction du bp*/
+  padding: 0 20px;
+  display: flex;
+  background-color: gainsboro;
+  justify-content: center;
+  align-items: center;
+}
+.localisation i {
+  width: 30px;
+}
+
+#main #reservation {
+  background-color: whitesmoke;
+  /*devrait changer en fonction du bp*/
+  padding: 0 20px;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+#main #reservation h2 {
+  margin-top: 0;
+}
+#main #reservation input {
+  background-color: #9356DC;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 5px 5px gainsboro;
+  font-size: 1.1em;
+  border: none;
+  padding: 15px 25px;
+}
+#main #fonctionnement {
+  /*devrait changer en fonction du bp*/
+  padding: 0 20px;
+  padding-top: 50px;
+  /*COULD BE ????*/
+  padding-bottom: 55px;
+}
+#main #fonctionnement h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+#main #fonctionnement div {
+  height: 75px;
+  line-height: 75px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 0 5px 10px gainsboro;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  padding-left: 35px;
+}
+#main #fonctionnement div i {
+  color: grey;
+  width: 40px;
+}
+#main #fonctionnement div:hover {
+  background-color: #f2eafb;
+}
+#main #fonctionnement div:hover i {
+  color: #9356DC;
+}
+#main #restaurants {
+  background-color: whitesmoke;
+  /*devrait changer en fonction du bp*/
+  padding: 0 20px;
+  padding-bottom: 55px;
+  padding-top: 50px;
+  /*COULD BE ???*/
+}
+#main #restaurants h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+#main #restaurants .carte_restaurant {
+  height: 250px;
+  /*devrait potentiellement changer selon bp*/
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px gainsboro;
+  margin-bottom: 20px;
+  position: relative;
+}
+#main #restaurants .carte_restaurant a {
+  color: black;
+  text-decoration: none;
+}
+#main #restaurants .carte_restaurant a:hover {
+  color: #FF79DA;
+}
+#main #restaurants .carte_restaurant i {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+#main #restaurants .carte_restaurant .far {
+  transition: opacity 400ms;
+}
+#main #restaurants .carte_restaurant .far:hover {
+  opacity: 0;
+}
+#main #restaurants .carte_restaurant .fas {
+  opacity: 0;
+  color: yellow;
+  transition: opacity 400ms;
+  /*&:hover{
+  	opacity: 1;
+  }*/
+}
+#main #restaurants .carte_restaurant img {
+  top: 0;
+  height: 175px;
+  /*devrait changer selon bp*/
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+}
+#main #restaurants .carte_restaurant__txt {
+  /*devrait changer en fonction du bp*/
+  padding: 0 15px;
+}
+#main #restaurants .carte_restaurant__txt h4 {
+  margin: 0;
+}
+#main #restaurants .carte_restaurant__txt p {
+  margin: 0;
+}
+#main #restaurants .carte_restaurant__nv {
+  position: absolute;
+  background-color: #99E2D0;
+  color: #217460;
+  border-radius: 5px;
+  width: 23.5%;
+  height: 30px;
+  top: 15px;
+  right: 4%;
+  text-align: center;
+  line-height: 30px;
+}
+
+footer {
+  /*devrait changer en fonction du bp*/
+  padding: 0 20px;
+  background-color: black;
+  color: white;
+  padding-bottom: 30px;
+}
+footer h3 {
+  font-family: "Shrikhand";
+  margin-top: 0;
+  padding-top: 25px;
+}
+footer ul li {
+  margin-bottom: 10px;
+}
+footer ul li i {
+  width: 25px;
+}
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+footer ul li a:hover {
+  color: #9356DC;
+}
+footer ul li em {
+  font-weight: bold;
+  font-style: none;
+}
+
+/*# sourceMappingURL=output.css.map */
