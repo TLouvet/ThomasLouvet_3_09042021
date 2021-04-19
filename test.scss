@@ -1,0 +1,63 @@
+/*Code pour utiliser un display flex et les alignements nécessaires*/
+@mixin flexdisplay($justify:center, $align:center){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+/*Utilisé pour le logo et les noms des restaurants*/
+@mixin restaurant-appname-display
+{
+	font-family: $title-font;
+	font-weight: normal;
+	margin: 0;
+}
+
+/*Bouton explorer nos restaurants et Commander*/
+@mixin clickable_btn($isHovered: "") {
+	cursor: pointer;
+	color:white;
+	border-radius: 30px;
+	font-size: 1.1em;
+	border: none;
+	background: linear-gradient($secondary-color,$primary-color);
+	opacity: 1;
+	padding: 15px 25px;
+	box-shadow: 0 5px 5px $shadow-light;
+
+	@if $isHovered != ""{
+		opacity:0.75;
+		box-shadow: 0 5px 5px darken($shadow-light,10%);
+	}
+}
+
+/*Coeur qui doit apparaitre lors du clic, invisible au début*/
+@mixin full-heart-base{
+	position: absolute;
+	top:0;
+	left:0;
+	opacity: 0;
+	color: $primary-color;
+	transition: opacity 400ms;
+}
+
+/*Affichage des liens*/
+@mixin basiclinkdisplay($bck-col){
+	text-decoration: none;
+
+	@if (lightness($bck-col) < 30% ){
+		color:white;
+	}
+	@else {
+		color: black;
+	}
+
+    &:hover{
+        color:$primary-color;
+    }
+}
+
+/******Potentiellement à revoir****/
+@mixin global-sidepadding($sidepad: $mobile-sidepadding){ /*devrait changer en fonction du bp*/
+	padding: 0 $sidepad;
+}

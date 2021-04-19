@@ -1,35 +1,10 @@
 @import "variables.scss";
+@import "test.scss";
+@import "utility.scss";
 
-@mixin global-sidepadding($sidepad: $mobile-sidepadding){ /*devrait changer en fonction du bp*/
-	padding: 0 $sidepad;
-}
-
-/*Accueil et Restaurants*/
-@mixin clickable_btn($isHovered: "") {
-	cursor: pointer;
-	color:white;
-	border-radius: 30px;
-	font-size: 1.1em;
-	border: none;
-	background: linear-gradient($secondary-color,$primary-color);
-	opacity: 1;
-	padding: 15px 25px;
-	box-shadow: 0 5px 5px $shadow-light;
-
-	@if $isHovered != ""{
-		opacity:0.75;
-		box-shadow: 0 5px 5px darken($shadow-light,10%);
-	}
-}
-
-@mixin full-heart-base{
-	position: absolute;
-	top:0;
-	left:0;
-	opacity: 0;
-	color: $primary-color;
-	transition: opacity 400ms;
-}
+/*Layout*/
+@import "layout/header";
+@import "layout/footer";
 
 @mixin overflowingtext{
 	white-space:nowrap;
@@ -37,28 +12,15 @@
 	text-overflow: ellipsis;
 }
 
-@mixin globalfooter{
-	@include global-sidepadding();
-	background-color: black;
-	color: white;
-}
-
 @mixin center-text{
 	text-align: center;
 }
 
-@mixin restaurant-appname-display
-{
-	font-family: $title-font;
-	font-weight: normal; /*La police shrikhand est déjà relativement bold*/
-	margin: 0;
-}
-
+/****/
 body{
-	margin:0;
 	font-family: $text-font;
+	margin:0;
 }
-
 
 ul{
 	padding-left: 0;
@@ -77,30 +39,11 @@ img{
 	@include center-text();
 }
 
-header{
-	display: flex; /*Pour les pages de restaurants*/
-	position: relative;
-	align-items: center;
-	@include global-sidepadding();
-	padding-top: 20px;
-	padding-bottom:10px;
-	text-align: center;
-	box-shadow: 0 5px 5px darken($shadow-light,10%);
-	i{
-		color:black;
-	}
-	h1{
-		@include restaurant-appname-display();
-		margin: auto;
-	}
-}
 
 .localisation{
 	@include global-sidepadding();
-	display: flex;
+	@include flexdisplay();
 	background-color: $shadow-light;
-	justify-content: center;
-	align-items: center;
 	i{
 		width:30px;
 	}
@@ -130,11 +73,9 @@ button{
 		background-color: $light-background;
 		h1{
 			@include restaurant-appname-display();
-			display: flex;
+			@include flexdisplay(space-between,baseline);
 			padding: 40px 35px 35px 20px ;
 			font-size:1.7em;
-			justify-content: space-between;
-			align-items: baseline;
 			.far{
 				position:relative;
 				.fas{
@@ -152,8 +93,6 @@ button{
 	&__title{
 		margin-left:20px;
 		h2{
-			margin-bottom: 0;
-			margin-top:0;
 			font-weight: normal;
 		}
 		.undertitle{
@@ -175,12 +114,9 @@ button{
 		overflow: hidden;
 		h3{
 			@include overflowingtext();
-			margin:0;
 		}
 		&__description{
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
+			@include flexdisplay(space-between);
 			margin-top:5px;
 			transition: margin 300ms;
 			p{
@@ -203,9 +139,7 @@ button{
 			height: 100%;
 			border-radius: 0 20px 20px 0;
 
-			display: flex; /*Affichage de l'icone centrale*/
-			align-items: center;
-			justify-content: center;
+			@include flexdisplay(); /*affichage icone centrale*/
 			color: white;
 			overflow: hidden;
 
@@ -226,8 +160,7 @@ button{
 					& > i{
 						transform:rotate(360deg);
 					}
-				}
-				
+				}		
 		}
 	}
 	#reservation{
@@ -254,8 +187,7 @@ button{
 			margin-bottom: 25px;
 		}
 		div{
-			display: flex;
-			align-items: center;
+			@include flexdisplay(inherit);
 			position: relative;
 			height:70px;
 			line-height: 70px;
@@ -307,19 +239,13 @@ button{
 			margin-bottom: 20px;
 			position: relative;
 			a{
-				color: black;
-				text-decoration: none;
-				&:hover{
-					color: $secondary-color;
-				}
-				
+				@include basiclinkdisplay(white);		
 			}
 			i{
 				position: absolute;
 				right:25px;
 				bottom:25px;
 			}
-
 			.far{
 				transition: opacity 400ms;
 				&:hover{
@@ -329,14 +255,13 @@ button{
 					}
 				}
 			}
-			.fas{ /** le coeur qui doit se remplir**/
+			.fas{ 
 				@include full-heart-base();
 			}
 			p{
 				margin-bottom: 0;
 			}
 			img{
-				top:0;
 				height:$homepage-mobile-imgheight; /*devrait changer selon bp*/
 				width:100%;
 				border-radius: 20px 20px 0 0;
@@ -345,13 +270,9 @@ button{
 			&__txt{
 				@include global-sidepadding(15px);
 				padding-top:15px;
-				h4 {
-					margin:0;
-				}
 				p{
 					margin-top:5px;
 				}
-
 			}
 			&__nv
 			{
@@ -371,32 +292,4 @@ button{
 
 }
 
-footer{
-	@include globalfooter();
-	padding-bottom: 30px;
-	h3{
-		font-family: "Shrikhand";
-		margin-top: 0;
-		padding-top:25px;
-	}
-	ul{
-		li{
-			margin-bottom: 10px;
-			i{
-				width:25px;
-			}
-			a{
-				color: white;
-				text-decoration: none;
-				&:hover{
-					color:$primary-color;
-				}
-			}
-			em{
-				font-weight: bold;
-				font-style: none;
-			}
-		}
-	}
-}
 

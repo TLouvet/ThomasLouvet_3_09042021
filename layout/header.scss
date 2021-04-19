@@ -1,0 +1,16 @@
+header{
+	@include flexdisplay(inherit);
+	@include global-sidepadding();
+	position: relative;
+	padding-top: 20px;
+	padding-bottom:10px;
+	text-align: center;
+	box-shadow: 0 5px 5px darken($shadow-light,10%);
+	i{
+		color:black;
+	}
+	h1{
+		@include restaurant-appname-display();
+		margin: auto;
+	}
+}
