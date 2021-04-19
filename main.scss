@@ -1,11 +1,21 @@
-/*Var*/
+/*Couleurs*/
 $primary-color: #9356DC; 
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0; 
+
+/*Polices*/
+$text-font: "Roboto";
+$title-font: "Shrikhand";
+
+/**/
+$decalage-top-img: -70px;
 $mobile-sidepadding: 20px;
 $accueil-mobile-restautantheight: 250px;
 $homepage-mobile-imgheight: 175px;
 $bplist: 600px 1024px 1440px;
+
+/*vvvaaaarrrrs*/
+$validationdiv-width:60px;
 
 $light-background: rgb(245,245,245);
 $shadow-light:rgb(220,220,220);
@@ -13,6 +23,39 @@ $shadow-light:rgb(220,220,220);
 
 @mixin global-sidepadding($sidepad: $mobile-sidepadding){ /*devrait changer en fonction du bp*/
 	padding: 0 $sidepad;
+}
+
+/*Accueil et Restaurants*/
+@mixin clickable_btn($isHovered: "") {
+	cursor: pointer;
+	color:white;
+	border-radius: 30px;
+	font-size: 1.1em;
+	border: none;
+	background: linear-gradient($secondary-color,$primary-color);
+	opacity: 1;
+	padding: 15px 25px;
+	box-shadow: 0 5px 5px $shadow-light;
+
+	@if $isHovered != ""{
+		opacity:0.75;
+		box-shadow: 0 5px 5px darken($shadow-light,10%);
+	}
+}
+
+@mixin full-heart-base{
+	position: absolute;
+	top:0;
+	left:0;
+	opacity: 0;
+	color: $primary-color;
+	transition: opacity 400ms;
+}
+
+@mixin overflowingtext{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
 }
 
 @mixin globalfooter{
@@ -25,15 +68,29 @@ $shadow-light:rgb(220,220,220);
 	text-align: center;
 }
 
+@mixin restaurant-appname-display
+{
+	font-family: $title-font;
+	font-weight: normal; /*La police shrikhand est déjà relativement bold*/
+	margin: 0;
+}
 
 body{
 	margin:0;
-	font-family: "Roboto";
+	font-family: $text-font;
 }
+
 
 ul{
 	padding-left: 0;
 	list-style-type: none;
+}
+
+img{
+	position:relative;
+	height: 260px;
+	object-fit: cover;
+	width:100%;
 }
 
 #reservation{
@@ -42,12 +99,19 @@ ul{
 }
 
 header{
+	display: flex; /*Pour les pages de restaurants*/
+	align-items: center;
 	@include global-sidepadding();
+	padding-top: 20px;
+	padding-bottom:10px;
 	text-align: center;
 	box-shadow: 0 5px 10px $shadow-light;
+	i{
+		color:black;
+	}
 	h1{
-		font-family: "Shrikhand";
-		margin-bottom: 0;
+		@include restaurant-appname-display();
+		margin: auto;
 	}
 }
 
@@ -62,8 +126,130 @@ header{
 	}
 }
 
-#main{
+/* Bouton commande sur toutes les pages de menu*/
+button{
+	@include clickable_btn();
+	margin-bottom: 85px;
+	margin-top:35px;
+	&:hover{
+		@include clickable_btn("hovered");
+	}
+}
 
+.img-container{
+	margin-top:0;
+}
+
+.main{
+	/*Pages des restaurants*/
+	&__restaurants{
+		position:relative;
+		top:$decalage-top-img;
+		margin-bottom:$decalage-top-img; /*Solution pour contrer la position relative, sinon on créé un whitespace supplémentaire*/
+		border-radius: 50px 50px 0 0;
+		background-color: $light-background;
+		h1{
+			@include restaurant-appname-display();
+			display: flex;
+			padding: 40px 35px 35px 20px ;
+			font-size:1.7em;
+			justify-content: space-between;
+			align-items: baseline;
+			.far{
+				position:relative;
+				.fas{
+					@include full-heart-base();
+				}
+			}
+		}
+		#btn_commander{
+			text-align: center;
+		}
+		section{
+			padding-bottom: 35px;
+		}
+	}
+	&__title{
+		margin-left:20px;
+		h2{
+			margin-bottom: 0;
+			margin-top:0;
+			font-weight: normal;
+		}
+		.undertitle{
+			margin-top:5px;
+			margin-bottom: 15px;
+			height:3px;
+			width:40px;
+			background-color: $tertiary-color;
+		}
+	}
+	&__item{
+		background-color: white;
+		box-shadow: 0 0 10px $shadow-light;
+		margin: 15px;
+		border-radius: 20px;
+		padding: 15px 25px 15px 15px;
+		position: relative;
+		z-index:2;
+		overflow: hidden;
+		h3{
+			@include overflowingtext();
+			margin:0;
+		}
+		&__description{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top:5px;
+			transition: margin 300ms;
+			p{
+				margin: 0;
+				width:87%;
+				@include overflowingtext();
+				font-size: 15px;
+			}
+			.prix{
+				font-weight: bold;
+			}
+		}
+		.validation{
+			background-color: $tertiary-color;
+			position:absolute;
+			z-index: 1;
+			right: 0;
+			top:0;
+			width:$validationdiv-width;
+			height: 100%;
+			border-radius: 0 20px 20px 0;
+
+			display: flex; /*Affichage de l'icone centrale*/
+			align-items: center;
+			justify-content: center;
+			color: white;
+			overflow: hidden;
+
+			transform-origin: right;
+			transform: scaleX(0);
+			transition: transform 300ms ease-in-out;
+			i{
+				transition: transform 300ms ease-out;
+				transition-delay: 200ms;
+			}
+		}
+		&:hover{ 
+				.main__item__description{ 
+					margin-right: $validationdiv-width;
+				}
+				.validation{
+					transform:scaleX(1);
+					& > i{
+						transform:rotate(360deg);
+					}
+				}
+				
+		}
+	}
 	#reservation{
 		background-color: $light-background;
 		@include global-sidepadding();
@@ -73,13 +259,10 @@ header{
 			margin-top: 0;
 		}
 		input{
-			background-color: $primary-color;
-			color:white;
-			border-radius: 30px;
-			box-shadow: 0 5px 5px $shadow-light;
-			font-size: 1.1em;
-			border: none;
-			padding: 15px 25px;
+			@include clickable_btn();
+			&:hover{
+				@include clickable_btn("hovered");
+			}
 		}
 	}
 	#fonctionnement{
@@ -91,8 +274,11 @@ header{
 			margin-bottom: 25px;
 		}
 		div{
-			height:75px;
-			line-height: 75px;
+			display: flex;
+			align-items: center;
+			position: relative;
+			height:70px;
+			line-height: 70px;
 			border-radius: 20px;
 			background-color: $light-background;
 			box-shadow: 0 5px 10px $shadow-light;
@@ -108,6 +294,19 @@ header{
 				i{
 					color:$primary-color;
 				}
+			}
+			p{
+				position: absolute;
+				left:-10px;
+				text-align: center;
+				line-height: 20px;
+				height: 20px;
+				width:20px;
+				margin-top:0;
+				background-color: $primary-color;
+				border-radius: 100px;	
+				color:white;
+				font-size: 12px;			
 			}
 		}
 	}
@@ -140,20 +339,20 @@ header{
 				right:25px;
 				bottom:25px;
 			}
+
 			.far{
 				transition: opacity 400ms;
 				&:hover{
 					opacity: 0;
+					& > .fas{
+						opacity: 1;
+					}
 				}
 			}
-			.fas{
-				opacity: 0;
-				color: yellow;
-				transition: opacity 400ms;
-				/*&:hover{
-					opacity: 1;
-				}*/
+			.fas{ /** le coeur qui doit se remplir**/
+				@include full-heart-base();
 			}
+
 			img{
 				top:0;
 				height:$homepage-mobile-imgheight; /*devrait changer selon bp*/

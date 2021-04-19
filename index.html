@@ -13,7 +13,7 @@
 
     <body>
         <header>
-            <h1>Ohmyfood</h1>
+            <h1>ohmyfood</h1>
         </header>
 
         <!--Localisation-->
@@ -23,28 +23,31 @@
         </div>
 
         <!-- Sections fonctionnement + restau-->
-        <div id="main">
+        <div class="main">
             <div id="reservation">
                 <h2>Réservez le menu qui vous convient</h2>
                 <p>Découvrez des restautants d'exception,<br/> sélectionnés par nos soins</p>
-                <a href="#Restaurants">
+                <a href="#restaurants">
                     <input type="button" value="Explorer nos restaurants" id="btn_commande" />
                 </a>
             </div>
 
             <section id="fonctionnement">
                 <h2>Fonctionnement</h2>
-                <div class="fonctionnement__div">
+                <div>
+                    <p class="fonctionnement__nbr">1 </p>
                     <i class="fas fa-mobile-alt"></i> 
                     Choisissez un restaurant
                 </div>
 
-                <div class="fonctionnement__div">
+                <div>
+                    <p class="fonctionnement__nbr">2 </p>
                     <i class="fas fa-list-ul"></i> 
                     Composez votre menu 
                </div>
 
-                <div class="fonctionnement__div">
+                <div>
+                    <p class="fonctionnement__nbr">3 </p>
                     <i class="fas fa-store"></i> 
                     Dégustez au restaurant
                 </div>
@@ -57,9 +60,7 @@
                 <div id="cartes_restautant_wraper">
                     <div class="carte_restaurant">
                         <a href="restau1.html">
-                            <p>
-                                <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant - La palette du goût"/>
-                            </p>
+                            <p><img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant - La palette du goût"/> </p>
                             <div class="carte_restaurant__nv">Nouveau</div>
                             <div class="carte_restaurant__txt">
                                 <h4>La palette du goût</h4>
@@ -89,8 +90,9 @@
                                 <p>Cité Rouge</p>
                             </div>
                         </a>
-                        <i class="far fa-heart fa-lg"></i>
-                        <i class="fas fa-heart fa-lg"></i>
+                        <i class="far fa-heart fa-lg">
+                            <i class="fas fa-heart "></i>
+                        </i>
                     </div>
 
                     <div class="carte_restaurant">
