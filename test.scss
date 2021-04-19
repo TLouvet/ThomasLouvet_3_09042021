@@ -6,12 +6,7 @@
 }
 
 /*Utilisé pour le logo et les noms des restaurants*/
-@mixin restaurant-appname-display
-{
-	font-family: $title-font;
-	font-weight: normal;
-	margin: 0;
-}
+
 
 /*Bouton explorer nos restaurants et Commander*/
 @mixin clickable_btn($isHovered: "") {

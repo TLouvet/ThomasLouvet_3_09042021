@@ -1,6 +1,12 @@
 /* utility classes*/
 
+.special-title{
+    font-family: $title-font;
+	font-weight: normal;
+}
+
 /*appliquée sur des h et p*/ 
 .nomargin{
-	margin:0;
+	margin-top:0;
+    margin-bottom:0;
 }

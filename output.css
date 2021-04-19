@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*Utils*/
 /*Couleurs*/
 /*Polices*/
 /**/
@@ -10,9 +11,15 @@
 /*Affichage des liens*/
 /******Potentiellement à revoir****/
 /* utility classes*/
+.special-title {
+  font-family: "Shrikhand";
+  font-weight: normal;
+}
+
 /*appliquée sur des h et p*/
 .nomargin {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*Layout*/
@@ -32,24 +39,17 @@ header i {
   color: black;
 }
 header h1 {
-  font-family: "Shrikhand";
-  font-weight: normal;
-  margin: 0;
   margin: auto;
 }
 
 /* footer.scss 
 Footer global utilisé dans chaque page du site*/
 footer {
-  /*devrait changer en fonction du bp*/
-  padding: 0 20px;
   background-color: #323232;
   color: white;
+  /*devrait changer en fonction du bp*/
+  padding: 0 20px;
   padding-bottom: 30px;
-}
-footer h3 {
-  font-family: "Shrikhand";
-  margin-top: 0;
   padding-top: 25px;
 }
 footer ul li {
@@ -70,6 +70,135 @@ footer ul li em {
   font-style: none;
 }
 
+/* main_restaurants.scss 
+
+Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe les évènements jusqu'au footer*/
+.main__restaurants {
+  position: relative;
+  top: -70px;
+  margin-bottom: -70px;
+  /*Solution pour contrer la position relative, sinon on créé un whitespace supplémentaire*/
+  border-radius: 50px 50px 0 0;
+  background-color: whitesmoke;
+}
+.main__restaurants h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 40px 35px 35px 20px;
+  font-size: 1.7em;
+}
+.main__restaurants h1 .far {
+  position: relative;
+}
+.main__restaurants h1 .far .fas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  color: #9356DC;
+  transition: opacity 400ms;
+}
+.main__restaurants #btn_commander {
+  text-align: center;
+}
+.main__restaurants section {
+  padding-bottom: 35px;
+}
+
+/*component*/
+/* --> mainitem*/
+/*pages*/
+.loadspin {
+  background: linear-gradient(#FF79DA, #9356DC);
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  animation: spinner 1500ms ease-in-out forwards;
+  animation-delay: 1500ms;
+  width: 100%;
+  min-height: 100vh;
+  /*Responsive car s'adapte peu importe la taille du viewport*/
+  text-align: center;
+}
+.loadspin__text {
+  padding-top: 30vh;
+  font-family: "Shrikhand";
+  font-size: 12vw;
+  animation: txtappear 1s ease-in-out;
+  margin-bottom: 15px;
+}
+.loadspin__circle {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  border: 5px solid white;
+  border-bottom-color: #99E2D0;
+  border-radius: 100px;
+  animation: circlerot 1500ms linear infinite;
+  margin-bottom: 40px;
+}
+
+.fa-egg {
+  display: block;
+  color: #f5e7bc;
+  margin-right: 20px;
+  animation: rightmove 2450ms ease-in;
+}
+
+.fa-cheese {
+  color: yellow;
+  margin-right: 20px;
+  /* animation: rightmove 2500ms ease-in;*/
+}
+
+.fa-wine-glass-alt {
+  color: #f5e6ba;
+  animation: leftmove 2550ms ease-in;
+}
+
+@keyframes leftmove {
+  25% {
+    transform: translateX(5%) rotate(45deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-45deg);
+  }
+}
+@keyframes rightmove {
+  25% {
+    transform: translateX(-5%) rotate(90deg);
+  }
+  75% {
+    transform: translateX(5%) rotate(-90deg);
+  }
+}
+@keyframes txtappear {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(30vh);
+  }
+}
+@keyframes circlerot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 /****/
 body {
   font-family: "Roboto";
@@ -106,63 +235,6 @@ img {
   width: 30px;
 }
 
-.loadspin {
-  background: linear-gradient(#FF79DA, #9356DC);
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  animation: spinner 1500ms ease-in-out forwards;
-  animation-delay: 1500ms;
-  width: 100%;
-  min-height: 100vh;
-  /*Responsive car s'adapte peu importe la taille du viewport*/
-  display: flex;
-  flex-direction: column;
-  /*A changer sur des résolutions plus grandes*/
-  justify-content: center;
-  align-items: center;
-}
-.loadspin__text {
-  font-family: "Shrikhand";
-  font-size: 10vw;
-  animation: txtappear 1s ease-in-out;
-  margin-bottom: 15px;
-}
-.loadspin__circle {
-  width: 70px;
-  height: 70px;
-  border: 5px solid white;
-  border-bottom-color: #99E2D0;
-  border-radius: 100px;
-  animation: circlerot 1500ms linear infinite;
-}
-
-@keyframes txtappear {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(30vh);
-  }
-}
-@keyframes circlerot {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spinner {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 /* Bouton commande sur toutes les pages de menu*/
 button {
   cursor: pointer;
@@ -197,41 +269,6 @@ button:hover {
 
 .main {
   /*Pages des restaurants*/
-}
-.main__restaurants {
-  position: relative;
-  top: -70px;
-  margin-bottom: -70px;
-  /*Solution pour contrer la position relative, sinon on créé un whitespace supplémentaire*/
-  border-radius: 50px 50px 0 0;
-  background-color: whitesmoke;
-}
-.main__restaurants h1 {
-  font-family: "Shrikhand";
-  font-weight: normal;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 40px 35px 35px 20px;
-  font-size: 1.7em;
-}
-.main__restaurants h1 .far {
-  position: relative;
-}
-.main__restaurants h1 .far .fas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  color: #9356DC;
-  transition: opacity 400ms;
-}
-.main__restaurants #btn_commander {
-  text-align: center;
-}
-.main__restaurants section {
-  padding-bottom: 35px;
 }
 .main__title {
   margin-left: 20px;
@@ -472,6 +509,35 @@ button:hover {
   right: 4%;
   text-align: center;
   line-height: 30px;
+}
+
+.main__item {
+  animation: apparition 1s ease-in-out forwards;
+  opacity: 0;
+}
+.main__item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.main__item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.main__item:nth-child(4) {
+  animation-delay: 0.5s;
+}
+.main__item:nth-child(5) {
+  animation-delay: 0.7s;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */

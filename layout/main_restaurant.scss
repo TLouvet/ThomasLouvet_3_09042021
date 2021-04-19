@@ -1,0 +1,30 @@
+/* main_restaurants.scss 
+
+Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe les évènements jusqu'au footer*/
+
+.main{
+    &__restaurants{
+		position:relative;
+		top:$decalage-top-img;
+		margin-bottom:$decalage-top-img; /*Solution pour contrer la position relative, sinon on créé un whitespace supplémentaire*/
+		border-radius: 50px 50px 0 0;
+		background-color: $light-background;
+		h1{
+			@include flexdisplay(space-between,baseline);
+			padding: 40px 35px 35px 20px ;
+			font-size:1.7em;
+			.far{
+				position:relative;
+				.fas{
+					@include full-heart-base();
+				}
+			}
+		}
+		#btn_commander{
+			text-align: center;
+		}
+		section{
+			padding-bottom: 35px;
+		}
+	}
+}
