@@ -30,13 +30,14 @@ img {
 header {
   display: flex;
   /*Pour les pages de restaurants*/
+  position: relative;
   align-items: center;
   /*devrait changer en fonction du bp*/
   padding: 0 20px;
   padding-top: 20px;
   padding-bottom: 10px;
   text-align: center;
-  box-shadow: 0 5px 10px gainsboro;
+  box-shadow: 0 5px 5px #c3c3c3;
 }
 header i {
   color: black;
@@ -304,7 +305,7 @@ button:hover {
 }
 .main #restaurants h2 {
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 .main #restaurants .carte_restaurant {
   height: 250px;
@@ -345,6 +346,9 @@ button:hover {
   color: #9356DC;
   transition: opacity 400ms;
 }
+.main #restaurants .carte_restaurant p {
+  margin-bottom: 0;
+}
 .main #restaurants .carte_restaurant img {
   top: 0;
   height: 175px;
@@ -356,12 +360,13 @@ button:hover {
 .main #restaurants .carte_restaurant__txt {
   /*devrait changer en fonction du bp*/
   padding: 0 15px;
+  padding-top: 15px;
 }
 .main #restaurants .carte_restaurant__txt h4 {
   margin: 0;
 }
 .main #restaurants .carte_restaurant__txt p {
-  margin: 0;
+  margin-top: 5px;
 }
 .main #restaurants .carte_restaurant__nv {
   position: absolute;

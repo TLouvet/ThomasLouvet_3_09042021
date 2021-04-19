@@ -1,25 +1,4 @@
-/*Couleurs*/
-$primary-color: #9356DC; 
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0; 
-
-/*Polices*/
-$text-font: "Roboto";
-$title-font: "Shrikhand";
-
-/**/
-$decalage-top-img: -70px;
-$mobile-sidepadding: 20px;
-$accueil-mobile-restautantheight: 250px;
-$homepage-mobile-imgheight: 175px;
-$bplist: 600px 1024px 1440px;
-
-/*vvvaaaarrrrs*/
-$validationdiv-width:60px;
-
-$light-background: rgb(245,245,245);
-$shadow-light:rgb(220,220,220);
-
+@import "variables.scss";
 
 @mixin global-sidepadding($sidepad: $mobile-sidepadding){ /*devrait changer en fonction du bp*/
 	padding: 0 $sidepad;
@@ -100,12 +79,13 @@ img{
 
 header{
 	display: flex; /*Pour les pages de restaurants*/
+	position: relative;
 	align-items: center;
 	@include global-sidepadding();
 	padding-top: 20px;
 	padding-bottom:10px;
 	text-align: center;
-	box-shadow: 0 5px 10px $shadow-light;
+	box-shadow: 0 5px 5px darken($shadow-light,10%);
 	i{
 		color:black;
 	}
@@ -317,7 +297,7 @@ button{
 		padding-top:50px; /*COULD BE ???*/
 		h2{
 			margin-top:0;
-			margin-bottom:25px;
+			margin-bottom:30px;
 		}
 		.carte_restaurant{
 			height:$accueil-mobile-restautantheight; /*devrait potentiellement changer selon bp*/
@@ -352,7 +332,9 @@ button{
 			.fas{ /** le coeur qui doit se remplir**/
 				@include full-heart-base();
 			}
-
+			p{
+				margin-bottom: 0;
+			}
 			img{
 				top:0;
 				height:$homepage-mobile-imgheight; /*devrait changer selon bp*/
@@ -362,11 +344,12 @@ button{
 			}
 			&__txt{
 				@include global-sidepadding(15px);
+				padding-top:15px;
 				h4 {
 					margin:0;
 				}
 				p{
-					margin:0;
+					margin-top:5px;
 				}
 
 			}
