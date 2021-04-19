@@ -49,6 +49,64 @@ img{
 	}
 }
 
+.loadspin{
+	background: linear-gradient($secondary-color,$primary-color);
+	position: absolute;
+	z-index:3;
+	top:0;
+	left:0;
+	animation: spinner 1500ms ease-in-out forwards;
+	animation-delay: 1500ms;
+	width:100%;
+	min-height: 100vh; /*Responsive car s'adapte peu importe la taille du viewport*/
+	display: flex;
+	flex-direction: column; /*A changer sur des résolutions plus grandes*/
+	justify-content: center;
+	align-items: center;
+	&__text{
+		font-family: $title-font;
+		font-size:10vw;
+		animation: txtappear 1s ease-in-out;
+		margin-bottom: 15px;
+	}
+	&__circle{
+		width: 70px;
+		height: 70px;
+		border:5px solid white;
+		border-bottom-color:$tertiary-color;
+		border-radius: 100px;
+		animation: circlerot 1500ms linear infinite ;
+	}
+}
+
+@keyframes txtappear{
+	0%{
+		transform: scaleX(0);
+	}
+	100%{
+		transform: scaleX(30vh);
+	}
+}
+
+@keyframes circlerot {
+	0%{
+		transform:rotate(0deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+
+@keyframes spinner{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity:0;
+		visibility: hidden;
+	}
+}
+
 /* Bouton commande sur toutes les pages de menu*/
 button{
 	@include clickable_btn();
