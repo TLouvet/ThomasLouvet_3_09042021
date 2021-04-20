@@ -13,18 +13,45 @@ Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe
 			@include flexdisplay(space-between,baseline);
 			padding: 40px 35px 35px 20px ;
 			font-size:1.7em;
-			.far{
-				position:relative;
-				.fas{
-					@include full-heart-base();
-				}
+			.far{    /*Meme que sur la version accueil*/
+                z-index: 1;
+				transition: opacity 1000ms;
 			}
+            .fas{
+                @include full-heart-base();
+				z-index: 2;
+				&:hover{
+					cursor: pointer;
+					opacity: 1;
+					& + .far {
+						opacity: 0;
+					}
+				}
+            }
 		}
 		#btn_commander{
 			text-align: center;
 		}
 		section{
 			padding-bottom: 35px;
+            @include desktop-res{
+                width:30%;
+            }
 		}
 	}
+}
+
+
+/*a mettre à part*/
+.fa-fw{
+    position: relative;
+    .fas{
+        top:4px; /* c'est pas fou mais ça marche */
+    }
+}
+
+.fas.fa-heart::before{
+        background-image: linear-gradient(45deg,$secondary-color, $primary-color);
+        -webkit-background-clip: text;
+        color: transparent;
 }

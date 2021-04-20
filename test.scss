@@ -5,8 +5,11 @@
 	align-items: $align;
 }
 
-/*Utilisé pour le logo et les noms des restaurants*/
-
+@mixin desktop-res{
+	@media screen and (min-width:1200px) {
+		@content;
+	}
+}
 
 /*Bouton explorer nos restaurants et Commander*/
 @mixin clickable_btn($isHovered: "") {
@@ -29,10 +32,7 @@
 /*Coeur qui doit apparaitre lors du clic, invisible au début*/
 @mixin full-heart-base{
 	position: absolute;
-	top:0;
-	left:0;
 	opacity: 0;
-	color: $primary-color;
 	transition: opacity 400ms;
 }
 

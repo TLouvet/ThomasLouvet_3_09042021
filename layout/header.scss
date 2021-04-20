@@ -1,11 +1,12 @@
 header{
 	@include flexdisplay(inherit);
-	@include global-sidepadding();
+	@include global-sidepadding(); /*ça c'est clairement moche*/
 	position: relative;
 	padding-top: 20px;
 	padding-bottom:10px;
 	text-align: center;
 	box-shadow: 0 5px 5px darken($shadow-light,10%);
+	margin: auto;
 	i{
 		color:black;
 	}

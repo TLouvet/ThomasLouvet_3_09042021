@@ -17,7 +17,6 @@
             <i class="fas fa-egg fa-3x"></i>
             <i class="fas fa-cheese fa-3x"></i>
             <i class="fas fa-wine-glass-alt fa-3x"></i>
-
         </div>
         <header>
             <h1 class="special-title nomargin">ohmyfood</h1>
@@ -39,32 +38,33 @@
                 </a>
             </div>
 
-            <section id="fonctionnement">
+            <section class="fonctionnement">
                 <h2>Fonctionnement</h2>
-                <div>
-                    <p class="fonctionnement__nbr">1 </p>
-                    <i class="fas fa-mobile-alt"></i> 
-                    Choisissez un restaurant
+                <div class="fonctionnement__cardwraper">
+                    <div class="fonctionnement__card">
+                        <p class="fonctionnement__nbr">1 </p>
+                        <i class="fas fa-mobile-alt"></i> 
+                        Choisissez un restaurant
+                    </div>
+
+                    <div class="fonctionnement__card">
+                        <p class="fonctionnement__nbr">2 </p>
+                        <i class="fas fa-list-ul"></i> 
+                        Composez votre menu 
+                    </div>
+
+                    <div class="fonctionnement__card">
+                        <p class="fonctionnement__nbr">3 </p>
+                            <i class="fas fa-store"></i> 
+                            Dégustez au restaurant
+                    </div>
                 </div>
-
-                <div>
-                    <p class="fonctionnement__nbr">2 </p>
-                    <i class="fas fa-list-ul"></i> 
-                    Composez votre menu 
-               </div>
-
-                <div>
-                    <p class="fonctionnement__nbr">3 </p>
-                    <i class="fas fa-store"></i> 
-                    Dégustez au restaurant
-                </div>
-
             </section>
 
             <section id="restaurants">
                 <h2>Restaurants</h2>
                 <!--Restau 1-->
-                <div id="cartes_restautant_wraper">
+                <div class="carte_restaurant__wraper">
                     <div class="carte_restaurant">
                         <a href="restau1.html">
                             <p><img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant - La palette du goût"/> </p>
@@ -74,6 +74,7 @@
                                 <p>Ménilmontant</p>
                             </div>
                         </a>
+                        <i class="fas fa-heart fa-lg"></i>
                         <i class="far fa-heart fa-lg"></i>
                     </div>
 
@@ -86,6 +87,7 @@
                                 <p>Charonne</p>
                             </div>
                         </a>
+                        <i class="fas fa-heart fa-lg"></i>
                         <i class="far fa-heart fa-lg"></i>
                     </div>
 
@@ -97,9 +99,8 @@
                                 <p>Cité Rouge</p>
                             </div>
                         </a>
-                        <i class="far fa-heart fa-lg">
-                            <i class="fas fa-heart "></i>
-                        </i>
+                        <i class="fas fa-heart fa-lg"></i>
+                        <i class="far fa-heart fa-lg"></i>
                     </div>
 
                     <div class="carte_restaurant">
@@ -110,6 +111,7 @@
                                 <p>Folie-Méricourt</p>
                             </div>
                         </a>
+                        <i class="fas fa-heart fa-lg"></i>
                         <i class="far fa-heart fa-lg"></i>
                     </div>
                 </div>

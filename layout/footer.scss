@@ -7,6 +7,12 @@ footer{
     @include global-sidepadding();
 	padding-bottom: 30px;
     padding-top:25px;
+	@include desktop-res{
+		text-align: center;
+		h3{
+			font-size: 2em;
+		}
+	}
 	ul{
 		li{
 			margin-bottom: 10px;
