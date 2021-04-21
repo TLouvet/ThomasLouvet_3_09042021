@@ -19,21 +19,6 @@ Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe
 			padding: 40px 35px 35px 20px ;
 			font-size:1.7em;
 		}
-       /* .far{ /***** A SUPPRIMER LORS DES TESTS AVEC ICONES **
-            z-index: 1;
-            transition: opacity 1000ms;
-        }
-        .fas{ 
-            @include full-heart-base();
-            z-index: 2;
-            &:hover{
-                cursor: pointer;
-                opacity: 1;
-                & + .far {
-                    opacity: 0;
-                }
-            }
-        }*/
 		#btn_commander{
 			text-align: center;
 		}

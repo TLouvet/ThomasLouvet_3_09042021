@@ -7,6 +7,7 @@
 
 /*Layout*/
 @import "layout/header";
+@import "layout/body.scss";
 @import "layout/footer";
 
 @import "layout/main_restaurant.scss";
@@ -29,13 +30,6 @@
 }
 
 /****/
-body{
-	font-family: $text-font;
-	margin:0;
-	max-width: 1440px;
-	margin: auto;
-}
-
 ul{
 	padding-left: 0;
 	list-style-type: none;
@@ -50,7 +44,6 @@ img{
 		height: 300px;
 	}
 }
-
 
 .main{
 	/*Pages des restaurants*/
@@ -78,6 +71,7 @@ img{
 		overflow: hidden;
 		h3{
 			@include overflowingtext();
+			transition: margin 300ms;
 		}
 		&__description{
 			@include flexdisplay(space-between);
@@ -116,7 +110,7 @@ img{
 			}
 		}
 		&:hover{ 
-				.main__item__description{ 
+				.main__item__description, h3{ 
 					margin-right: $validationdiv-width;
 				}
 				.validation{
@@ -225,21 +219,6 @@ img{
 				right:25px;
 				bottom:25px;
 			}
-			/*.far{ /***** A SUPPRIMER LORS DES TESTS AVEC ICONES **
-				z-index: 1;
-				transition: opacity 1000ms;
-			}
-			.fas{ 
-				@include full-heart-base();
-				z-index: 2;
-				&:hover{
-					cursor: pointer;
-					opacity: 1;
-					& + .far {
-						opacity: 0;
-					}
-				}
-			}*/
 			img{
 				height:$homepage-mobile-imgheight; /*devrait changer selon bp*/
 				width:100%;
