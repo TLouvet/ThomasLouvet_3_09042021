@@ -1,7 +1,7 @@
 
 /*Utils*/
 @import "variables.scss";
-@import "test.scss";
+@import "mixins.scss";
 @import "utility.scss";
 
 
@@ -13,31 +13,34 @@
 
 /*component*/
 /* --> mainitem*/
+@import "components/hearts.scss";
+@import "components/button.scss";
 
 /*pages*/
+@import "pages/accueil-specific.scss";
 @import "pages/loader.scss";
+@import "pages/loader-icons.scss";
 
+/*useless, à mettre dans une classe util*/
 @mixin overflowingtext{
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow: ellipsis;
 }
 
-@mixin center-text{
-	text-align: center;
-}
-
 /****/
 body{
 	font-family: $text-font;
 	margin:0;
+	max-width: 1440px;
+	margin: auto;
 }
 
 ul{
 	padding-left: 0;
 	list-style-type: none;
 }
-
+/*ajouter spec ou juste mettre dans components*/
 img{
 	position:relative;
 	height: 260px;
@@ -48,34 +51,6 @@ img{
 	}
 }
 
-#reservation{
-	@include global-sidepadding();
-	@include center-text();
-}
-
-
-.localisation{
-	@include global-sidepadding();
-	@include flexdisplay();
-	background-color: $shadow-light;
-	i{
-		width:30px;
-	}
-}
-
-/* Bouton commande sur toutes les pages de menu*/
-button{
-	@include clickable_btn();
-	margin-bottom: 85px;
-	margin-top:35px;
-	&:hover{
-		@include clickable_btn("hovered");
-	}
-}
-
-.img-container{
-	margin-top:0;
-}
 
 .main{
 	/*Pages des restaurants*/
@@ -152,21 +127,6 @@ button{
 				}		
 		}
 	}
-	#reservation{
-		background-color: $light-background;
-		@include global-sidepadding();
-		padding-top: 45px;
-		padding-bottom:55px;
-		h2{
-			margin-top: 0;
-		}
-		input{
-			@include clickable_btn();
-			&:hover{
-				@include clickable_btn("hovered");
-			}
-		}
-	}
 	.fonctionnement{
 		@include global-sidepadding();
 		padding-top: 50px; /*COULD BE ????*/
@@ -236,6 +196,14 @@ button{
 			margin-top:0;
 			margin-bottom:30px;
 		}
+		@include desktop-res{
+			width:95%;
+			margin: auto;
+			border-radius: 20px;
+			margin-bottom: 40px;
+			padding-bottom: 30px;
+			box-shadow: 0 0 10px $shadow-light;
+		}
 		.carte_restaurant{
 			height:$accueil-mobile-restautantheight; /*devrait potentiellement changer selon bp*/
 			background-color: white;
@@ -246,6 +214,9 @@ button{
 			@include desktop-res{
 				width: 23%;
 			}
+			@include tablet-res{
+				width:45%;
+			}
 			a{
 				@include basiclinkdisplay(white);		
 			}
@@ -254,7 +225,7 @@ button{
 				right:25px;
 				bottom:25px;
 			}
-			.far{
+			/*.far{ /***** A SUPPRIMER LORS DES TESTS AVEC ICONES **
 				z-index: 1;
 				transition: opacity 1000ms;
 			}
@@ -268,11 +239,7 @@ button{
 						opacity: 0;
 					}
 				}
-			}
-			p{
-				margin-bottom: 0;
-				margin-top: 0;
-			}
+			}*/
 			img{
 				height:$homepage-mobile-imgheight; /*devrait changer selon bp*/
 				width:100%;
@@ -294,7 +261,8 @@ button{
 				border-radius: 5px;
 				width: 23.5%;
 				@include desktop-res{
-					width: 25%;
+					max-width: 75px;
+					width: 30%;
 				}
 				height: 30px;
 				top:15px;
@@ -304,8 +272,11 @@ button{
 			}
 			&__wraper{
 				@include desktop-res{
-					display: flex;
-					justify-content: space-between;
+					@include flexdisplay(space-between);
+				}
+				@include tablet-res{
+					@include flexdisplay(space-around);
+					flex-wrap: wrap;
 				}
 			}
 		}
@@ -345,6 +316,6 @@ button{
 .sections-wrapper{
 	@include desktop-res{
 		display: flex;
-		justify-content: space-between;;
+		justify-content: space-between;
 	}
 }

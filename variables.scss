@@ -10,13 +10,12 @@ $text-font: "Roboto";
 $title-font: "Shrikhand";
 
 /**/
-$decalage-top-img: -70px;
-$mobile-sidepadding: 20px;
+$decalage-top-img: -65px;
 $accueil-mobile-restautantheight: 250px;
 $homepage-mobile-imgheight: 175px;
 
 
-$bplist: 600px 1024px 1440px;
+$bplist: (mobile:600px, tablet:1024px);
 
 /*vvvaaaarrrrs*/
 $validationdiv-width:60px;

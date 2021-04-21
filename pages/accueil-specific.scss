@@ -1,0 +1,17 @@
+	/*accueil-reservation.scss
+
+	section sous le header et la sélection de la localisation sur la page d'accueil uniquement*/
+    #reservation{
+		background-color: $light-background;
+		text-align: center;
+		padding: 45px 20px 55px 20px;
+	}
+
+	.localisation{
+		@include global-sidepadding();
+		@include flexdisplay();
+		background-color: $shadow-light;
+		i{
+			width:30px;
+		}
+	}

@@ -6,6 +6,9 @@ header{
 	padding-bottom:10px;
 	text-align: center;
 	box-shadow: 0 5px 5px darken($shadow-light,10%);
+	@include desktop-res{
+		box-shadow:unset;
+	}
 	margin: auto;
 	i{
 		color:black;

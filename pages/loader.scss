@@ -7,7 +7,7 @@
 	animation: spinner 1500ms ease-in-out forwards;
 	animation-delay: 1500ms;
 	width:100%;
-	min-height: 100vh; /*Responsive car s'adapte peu importe la taille du viewport*/
+	min-height: 100%;
 	text-align: center;
 	&__text{
 		padding-top: 30vh;
@@ -29,40 +29,6 @@
 		animation: circlerot 1500ms linear infinite ;
 		margin-bottom: 40px;
 	}	
-}
-
-.fa-egg{
-    display: block;
-    color: #f5e7bc;
-    margin-right: 20px;
-    animation: rightmove 2450ms ease-in;
-}
-.fa-cheese{
-    color: yellow;
-    margin-right: 20px;	
-   /* animation: rightmove 2500ms ease-in;*/
-}
-.fa-wine-glass-alt{
-    color:#f5e6ba;
-    animation: leftmove 2550ms ease-in;
-}
-
-@keyframes leftmove{
-	25%{
-		transform: translateX(5%) rotate(45deg);
-	}
-	75%{
-		transform: translateX(-5%) rotate(-45deg);
-	}
-}
-
-@keyframes rightmove{
-	25%{
-		transform: translateX(-5%) rotate(-45deg);
-	}
-	75%{
-		transform: translateX(5%) rotate(45deg);
-	}
 }
 
 @keyframes txtappear{
