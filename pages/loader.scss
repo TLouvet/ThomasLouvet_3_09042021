@@ -21,8 +21,9 @@
 	&__circle{
 		width: 70px;
 		height: 70px;
-		border-bottom:5px solid $tertiary-color;
 		border-top:5px solid $secondary-color;
+		border-bottom:5px solid $tertiary-color;
+
 		border-radius: 100px;
 		animation: circlerot 1500ms linear infinite ;
 		margin-bottom: 40px;

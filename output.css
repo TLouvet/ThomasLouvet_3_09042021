@@ -5,7 +5,6 @@
 /**/
 /*vvvaaaarrrrs*/
 /*Code pour utiliser un display flex et les alignements nécessaires, tout est centré par défaut*/
-/*Affichage des liens*/
 /******Potentiellement à revoir****/
 /* utility classes*/
 .special-title {
@@ -52,6 +51,23 @@ body {
   margin: 0;
   max-width: 1440px;
   margin: auto;
+}
+
+img {
+  position: relative;
+  height: 260px;
+  object-fit: cover;
+  width: 100%;
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  img {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  img {
+    height: 100%;
+  }
 }
 
 /* footer.scss 
@@ -232,8 +248,8 @@ section sous le header et la sélection de la localisation sur la page d'accueil
 .loadspin__circle {
   width: 70px;
   height: 70px;
-  border-bottom: 5px solid #99E2D0;
   border-top: 5px solid #FF79DA;
+  border-bottom: 5px solid #99E2D0;
   border-radius: 100px;
   animation: circlerot 1500ms linear infinite;
   margin-bottom: 40px;
@@ -272,18 +288,6 @@ ul {
 }
 
 /*ajouter spec ou juste mettre dans components*/
-img {
-  position: relative;
-  height: 260px;
-  object-fit: cover;
-  width: 100%;
-}
-@media screen and (min-width: 1025px) {
-  img {
-    height: 300px;
-  }
-}
-
 .main {
   /*Pages des restaurants*/
 }

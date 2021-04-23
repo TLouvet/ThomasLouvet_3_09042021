@@ -34,15 +34,7 @@ ul{
 	list-style-type: none;
 }
 /*ajouter spec ou juste mettre dans components*/
-img{
-	position:relative;
-	height: 260px;
-	object-fit: cover;
-	width:100%;
-	@include desktop-res{
-		height: 300px;
-	}
-}
+
 
 .main{
 	/*Pages des restaurants*/

@@ -6,3 +6,16 @@ body{
 	max-width: 1440px;
 	margin: auto;
 }
+
+img{
+	position:relative;
+	height: 260px;
+	object-fit: cover;
+	width:100%;
+	@include tablet-res{
+		height:350px;
+	}
+	@include desktop-res{
+		height: 100%;
+	}
+}
