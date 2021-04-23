@@ -20,7 +20,6 @@
 /*pages*/
 @import "pages/accueil-specific.scss";
 @import "pages/loader.scss";
-@import "pages/loader-icons.scss";
 
 /*useless, à mettre dans une classe util*/
 @mixin overflowingtext{
@@ -71,7 +70,7 @@ img{
 		overflow: hidden;
 		h3{
 			@include overflowingtext();
-			transition: margin 300ms;
+			/*transition: margin 300ms;*/
 		}
 		&__description{
 			@include flexdisplay(space-between);
@@ -177,7 +176,7 @@ img{
 		&__cardwraper{
 			@include desktop-res{
 				display: flex;
-				justify-content: space-between;
+				justify-content: space-around;
 			}
 		}
 	}

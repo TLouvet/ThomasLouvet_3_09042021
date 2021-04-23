@@ -127,15 +127,6 @@ Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe
   }
 }
 
-/*a mettre à part*/
-.fa-fw {
-  position: relative;
-}
-.fa-fw .fas {
-  top: 4px;
-  /* c'est pas fou mais ça marche */
-}
-
 /*component*/
 /* --> mainitem*/
 /* hearts.scss
@@ -220,34 +211,29 @@ section sous le header et la sélection de la localisation sur la page d'accueil
 
 .loadspin {
   background: linear-gradient(#FF79DA, #9356DC);
-  position: absolute;
-  z-index: 3;
-  top: 0;
+  position: fixed;
+  z-index: 2;
   left: 0;
-  animation: spinner 1500ms ease-in-out forwards;
-  animation-delay: 1500ms;
+  animation: spinner 1000ms ease-in-out forwards;
+  animation-delay: 1000ms;
   width: 100%;
   min-height: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .loadspin__text {
-  padding-top: 30vh;
   font-family: "Shrikhand";
-  font-size: 12vw;
+  font-size: 3em;
   animation: txtappear 1s ease-in-out;
   margin-bottom: 15px;
 }
-@media screen and (min-width: 1025px) {
-  .loadspin__text {
-    font-size: 7vw;
-  }
-}
 .loadspin__circle {
-  margin: auto;
-  width: 100px;
-  height: 100px;
-  border: 5px solid white;
-  border-bottom-color: #99E2D0;
+  width: 70px;
+  height: 70px;
+  border-bottom: 5px solid #99E2D0;
+  border-top: 5px solid #FF79DA;
   border-radius: 100px;
   animation: circlerot 1500ms linear infinite;
   margin-bottom: 40px;
@@ -276,42 +262,6 @@ section sous le header et la sélection de la localisation sur la page d'accueil
   100% {
     opacity: 0;
     visibility: hidden;
-  }
-}
-/*Loader-icons 
-
-Ici on retrouve les icones du loader et leurs animations*/
-.fa-egg {
-  display: block;
-  color: #f5e7bc;
-  margin-right: 20px;
-  animation: rightmove 2450ms ease-in;
-}
-
-.fa-cheese {
-  color: yellow;
-  margin-right: 20px;
-}
-
-.fa-wine-glass-alt {
-  color: #f5e6ba;
-  animation: leftmove 2550ms ease-in;
-}
-
-@keyframes leftmove {
-  25% {
-    transform: translateX(5%) rotate(45deg);
-  }
-  75% {
-    transform: translateX(-5%) rotate(-45deg);
-  }
-}
-@keyframes rightmove {
-  25% {
-    transform: translateX(-5%) rotate(-45deg);
-  }
-  75% {
-    transform: translateX(5%) rotate(45deg);
   }
 }
 /*useless, à mettre dans une classe util*/
@@ -364,7 +314,7 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: margin 300ms;
+  /*transition: margin 300ms;*/
 }
 .main__item__description {
   display: flex;
@@ -483,7 +433,7 @@ img {
 @media screen and (min-width: 1025px) {
   .main .fonctionnement__cardwraper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 .main #restaurants {
