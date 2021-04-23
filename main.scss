@@ -28,12 +28,15 @@
 	text-overflow: ellipsis;
 }
 
-/****/
-ul{
-	padding-left: 0;
-	list-style-type: none;
+.HOPHOPHOP{
+    @include desktop-res{
+        background-color: $light-background;
+        padding-top: 30px;
+        border-radius: 20px;
+		box-shadow: 0 5px 10px $shadow-light;
+    }
 }
-/*ajouter spec ou juste mettre dans components*/
+
 
 
 .main{
@@ -52,36 +55,44 @@ ul{
 		}
 	}
 	&__item{
+		/****/
+		display: flex;
+		justify-content: space-between;
+		/*****/
 		background-color: white;
 		box-shadow: 0 0 10px $shadow-light;
 		margin: 15px;
 		border-radius: 20px;
-		padding: 15px 25px 15px 15px;
+		padding: 15px 20px 15px 10px;
 		position: relative;
-		z-index:2;
 		overflow: hidden;
 		h3{
-			@include overflowingtext();
-			/*transition: margin 300ms;*/
+			width: 93%;
+			margin-bottom: 5px;
 		}
 		&__description{
-			@include flexdisplay(space-between);
-			margin-top:5px;
-			transition: margin 300ms;
+			width: 100%;
+			@include flexdisplay(space-between, baseline);
+			flex-direction: column;
+			transition: margin 300ms, width 300ms;
 			p{
 				margin: 0;
-				width:87%;
 				@include overflowingtext();
-				font-size: 15px;
-			}
-			.prix{
-				font-weight: bold;
+				font-size: 0.95em;
+				width: 93%;
 			}
 		}
+		/****/
+		.prix{
+			display: flex;
+			align-items: flex-end;
+			font-weight: bold;
+			transition: margin 300ms;
+		}
+		/*****/
 		.validation{
 			background-color: $tertiary-color;
 			position:absolute;
-			z-index: 1;
 			right: 0;
 			top:0;
 			width:$validationdiv-width;
@@ -101,8 +112,20 @@ ul{
 			}
 		}
 		&:hover{ 
-				.main__item__description, h3{ 
+				.prix{ 
 					margin-right: $validationdiv-width;
+				}
+				.main__item__description{
+					margin-right: - $validationdiv-width;
+					width: 70%;
+				}
+				h3, p{
+					overflow: hidden;
+					text-overflow: ellipsis;
+					width: 100%;
+				}
+				h3{
+					@include overflowingtext();
 				}
 				.validation{
 					transform:scaleX(1);
@@ -182,8 +205,6 @@ ul{
 			margin-bottom:30px;
 		}
 		@include desktop-res{
-			width:95%;
-			margin: auto;
 			border-radius: 20px;
 			margin-bottom: 40px;
 			padding-bottom: 30px;
@@ -283,9 +304,11 @@ ul{
 	}
 }
 
+
 .sections-wrapper{
 	@include desktop-res{
 		display: flex;
 		justify-content: space-between;
 	}
 }
+

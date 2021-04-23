@@ -5,10 +5,17 @@
 	font-weight: normal;
 }
 
-
-
 /*appliquée sur des h et p*/ 
 .nomargin{
 	margin-top:0;
     margin-bottom:0;
 }
+
+/*sur la version pc il y a un petit espace blanc et la hauteur doit être appliquée sur le paragraphe plutôt que l'image
+qui fera elle 100% du paragraphe*/
+.img-container{
+    @include desktop-res {
+        height:400px;
+    }
+}
+

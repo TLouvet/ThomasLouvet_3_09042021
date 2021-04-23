@@ -18,6 +18,14 @@
   margin-bottom: 0;
 }
 
+/*sur la version pc il y a un petit espace blanc et la hauteur doit être appliquée sur le paragraphe plutôt que l'image
+qui fera elle 100% du paragraphe*/
+@media screen and (min-width: 1025px) {
+  .img-container {
+    height: 400px;
+  }
+}
+
 /*Layout*/
 header {
   display: flex;
@@ -51,6 +59,11 @@ body {
   margin: 0;
   max-width: 1440px;
   margin: auto;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
 }
 
 img {
@@ -198,6 +211,11 @@ button {
   padding: 15px 25px;
   margin: 35px 0 70px 0;
 }
+@media screen and (min-width: 1025px) {
+  button {
+    margin-bottom: 35px;
+  }
+}
 button:hover {
   opacity: 0.75;
   box-shadow: 0 5px 5px #c3c3c3;
@@ -206,23 +224,50 @@ button:hover {
 /*pages*/
 /*accueil-reservation.scss
 
-section sous le header et la sélection de la localisation sur la page d'accueil uniquement*/
+code utilisé seulement sur la page d'accueil hors animation*/
+@media screen and (min-width: 1025px) {
+  .main {
+    width: 95%;
+    margin: auto;
+  }
+}
+
 #reservation {
   background-color: whitesmoke;
   text-align: center;
   padding: 45px 20px 55px 20px;
 }
+@media screen and (min-width: 1025px) {
+  #reservation {
+    padding-bottom: 0;
+    border-radius: 20px;
+  }
+}
 
 .localisation {
-  /*devrait changer en fonction du bp*/
-  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
   background-color: gainsboro;
 }
-.localisation i {
+@media screen and (min-width: 1025px) {
+  .localisation {
+    border-radius: 20px;
+    box-shadow: 0 3px 10px gainsboro;
+    position: relative;
+    width: 20%;
+    margin: auto;
+    justify-content: flex-start;
+  }
+}
+.localisation > i {
   width: 30px;
+}
+@media screen and (min-width: 1025px) {
+  .localisation > i {
+    margin-right: 25px;
+  }
 }
 
 .loadspin {
@@ -230,6 +275,7 @@ section sous le header et la sélection de la localisation sur la page d'accueil
   position: fixed;
   z-index: 2;
   left: 0;
+  opacity: 0.8;
   animation: spinner 1000ms ease-in-out forwards;
   animation-delay: 1000ms;
   width: 100%;
@@ -241,9 +287,11 @@ section sous le header et la sélection de la localisation sur la page d'accueil
 }
 .loadspin__text {
   font-family: "Shrikhand";
+  text-shadow: 2px 2px 2px #99E2D0;
   font-size: 3em;
   animation: txtappear 1s ease-in-out;
   margin-bottom: 15px;
+  opacity: 1;
 }
 .loadspin__circle {
   width: 70px;
@@ -272,22 +320,21 @@ section sous le header et la sélection de la localisation sur la page d'accueil
   }
 }
 @keyframes spinner {
-  0% {
-    opacity: 1;
-  }
   100% {
     opacity: 0;
     visibility: hidden;
   }
 }
 /*useless, à mettre dans une classe util*/
-/****/
-ul {
-  padding-left: 0;
-  list-style-type: none;
+@media screen and (min-width: 1025px) {
+  .HOPHOPHOP {
+    background-color: whitesmoke;
+    padding-top: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px gainsboro;
+  }
 }
 
-/*ajouter spec ou juste mettre dans components*/
 .main {
   /*Pages des restaurants*/
 }
@@ -305,43 +352,49 @@ ul {
   background-color: #99E2D0;
 }
 .main__item {
+  /****/
+  display: flex;
+  justify-content: space-between;
+  /*****/
   background-color: white;
   box-shadow: 0 0 10px gainsboro;
   margin: 15px;
   border-radius: 20px;
-  padding: 15px 25px 15px 15px;
+  padding: 15px 20px 15px 10px;
   position: relative;
-  z-index: 2;
   overflow: hidden;
+  /****/
+  /*****/
 }
 .main__item h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /*transition: margin 300ms;*/
+  width: 93%;
+  margin-bottom: 5px;
 }
 .main__item__description {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 5px;
-  transition: margin 300ms;
+  align-items: baseline;
+  flex-direction: column;
+  transition: margin 300ms, width 300ms;
 }
 .main__item__description p {
   margin: 0;
-  width: 87%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 15px;
+  font-size: 0.95em;
+  width: 93%;
 }
-.main__item__description .prix {
+.main__item .prix {
+  display: flex;
+  align-items: flex-end;
   font-weight: bold;
+  transition: margin 300ms;
 }
 .main__item .validation {
   background-color: #99E2D0;
   position: absolute;
-  z-index: 1;
   right: 0;
   top: 0;
   width: 60px;
@@ -361,8 +414,22 @@ ul {
   transition: transform 300ms ease-out;
   transition-delay: 200ms;
 }
-.main__item:hover .main__item__description, .main__item:hover h3 {
+.main__item:hover .prix {
   margin-right: 60px;
+}
+.main__item:hover .main__item__description {
+  margin-right: -60px;
+  width: 70%;
+}
+.main__item:hover h3, .main__item:hover p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.main__item:hover h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .main__item:hover .validation {
   transform: scaleX(1);
@@ -454,8 +521,6 @@ ul {
 }
 @media screen and (min-width: 1025px) {
   .main #restaurants {
-    width: 95%;
-    margin: auto;
     border-radius: 20px;
     margin-bottom: 40px;
     padding-bottom: 30px;

@@ -3,6 +3,7 @@
 	position: fixed;
 	z-index:2;
 	left:0;
+	opacity: 0.8;
 	animation: spinner 1000ms ease-in-out forwards;
 	animation-delay: 1000ms;
 	width:100%;
@@ -14,9 +15,11 @@
 
 	&__text{
 		font-family: $title-font;
+		text-shadow: 2px 2px 2px $tertiary-color;
 		font-size:3em;
 		animation: txtappear 1s ease-in-out;
 		margin-bottom: 15px; 
+		opacity: 1;
 	}
 	&__circle{
 		width: 70px;
@@ -49,9 +52,7 @@
 }
 
 @keyframes spinner{
-	0%{
-		opacity: 1;
-	}
+
 	100%{
 		opacity:0;
 		visibility: hidden;

@@ -1,17 +1,39 @@
 	/*accueil-reservation.scss
 
-	section sous le header et la sélection de la localisation sur la page d'accueil uniquement*/
-    #reservation{
-		background-color: $light-background;
-		text-align: center;
-		padding: 45px 20px 55px 20px;
+	code utilisé seulement sur la page d'accueil hors animation*/
+.main{
+	@include desktop-res{
+		width: 95%;
+		margin: auto;
 	}
+}
 
-	.localisation{
-		@include global-sidepadding();
-		@include flexdisplay();
-		background-color: $shadow-light;
-		i{
-			width:30px;
+#reservation{
+	background-color: $light-background;
+	text-align: center;
+	padding: 45px 20px 55px 20px;
+	@include desktop-res{
+		padding-bottom: 0;
+		border-radius: 20px;
+	}
+}
+
+.localisation{
+	@include flexdisplay();
+	padding: 0 20px;
+	background-color: $shadow-light;
+	@include desktop-res{
+		border-radius: 20px;
+		box-shadow: 0 3px 10px $shadow-light;
+		position:relative;
+		width:20%;
+		margin: auto;
+		justify-content: flex-start;
+	}
+	& > i{
+		width:30px;
+		@include desktop-res{
+			margin-right: 25px;
 		}
 	}
+}
