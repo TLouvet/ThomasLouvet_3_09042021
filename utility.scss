@@ -1,5 +1,6 @@
 /* utility classes*/
 
+/**Les noms des restaurants, le logo header et footer*/
 .special-title{
     font-family: $title-font;
 	font-weight: normal;
@@ -19,3 +20,24 @@ qui fera elle 100% du paragraphe*/
     }
 }
 
+/**Sur les pages de restaurants, le trait en dessous des titres de catégories de plats **/
+.undertitle{
+    margin: 5px 0 15px 0;
+    height:3px;
+    width:40px;
+    background-color: $tertiary-color;
+}
+
+/**Titre logo footer desktop**/
+.--bigdesktop{
+    @include desktop-res{
+		font-size: 2em;
+	}
+}
+
+/**utilisé dans les pages de restaurants pour endcadrer les sections entrées / plats / desserts **/
+.sections-wrapper{
+	@include desktop-res{
+		@include flexdisplay(space-between,unset);
+	}
+}

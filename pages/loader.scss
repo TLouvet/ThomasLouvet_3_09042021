@@ -4,14 +4,12 @@
 	z-index:2;
 	left:0;
 	opacity: 0.8;
-	animation: spinner 1000ms ease-in-out forwards;
+	animation: fondu 1000ms ease-in-out forwards;
 	animation-delay: 1000ms;
 	width:100%;
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	min-height: 100%;	
+
+	@include flexdisplay(center,center,column);
 
 	&__text{
 		font-family: $title-font;
@@ -19,7 +17,6 @@
 		font-size:3em;
 		animation: txtappear 1s ease-in-out;
 		margin-bottom: 15px; 
-		opacity: 1;
 	}
 	&__circle{
 		width: 70px;
@@ -28,7 +25,7 @@
 		border-bottom:5px solid $tertiary-color;
 
 		border-radius: 100px;
-		animation: circlerot 1500ms linear infinite ;
+		animation: spinner 1500ms linear infinite ;
 		margin-bottom: 40px;
 	}	
 }
@@ -42,7 +39,7 @@
 	}
 }
 
-@keyframes circlerot {
+@keyframes spinner {
 	0%{
 		transform:rotate(0deg);
 	}
@@ -51,7 +48,7 @@
 	}
 }
 
-@keyframes spinner{
+@keyframes fondu{
 
 	100%{
 		opacity:0;

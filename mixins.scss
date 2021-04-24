@@ -1,18 +1,19 @@
 /*Code pour utiliser un display flex et les alignements nécessaires, tout est centré par défaut*/
-@mixin flexdisplay($justify:center, $align:center){
+@mixin flexdisplay($justify:center, $align:center, $direction:row){
 	display: flex;
 	justify-content: $justify;
 	align-items: $align;
+	flex-direction: $direction;
 }
 
 @mixin desktop-res{
-	@media screen and (min-width:1025px) {
+	@media screen and (min-width:1280px) {
 		@content;
 	}
 }
 
 @mixin tablet-res{
-	@media screen and (min-width:600px) and (max-width:1024px) {
+	@media screen and (min-width:600px) and (max-width:1279px) {
 		@content
 	}
 }
@@ -33,8 +34,3 @@
     }
 }
 
-
-/******Potentiellement à revoir****/
-@mixin global-sidepadding($sidepad: 20px){ /*devrait changer en fonction du bp*/
-	padding: 0 $sidepad;
-}

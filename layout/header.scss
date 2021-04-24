@@ -1,18 +1,21 @@
 header{
 	@include flexdisplay(inherit);
-	@include global-sidepadding(); /*ça c'est clairement moche*/
 	position: relative;
-	padding-top: 20px;
-	padding-bottom:10px;
+	padding: 20px;
+
 	text-align: center;
+	margin: auto;
+
 	box-shadow: 0 5px 5px darken($shadow-light,10%);
+
 	@include desktop-res{
 		box-shadow:unset;
 	}
-	margin: auto;
+
 	i{
 		color:black;
 	}
+	
 	h1{
 		margin: auto;
 	}

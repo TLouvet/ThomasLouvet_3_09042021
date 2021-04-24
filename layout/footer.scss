@@ -4,28 +4,23 @@ Footer global utilisé dans chaque page du site*/
 footer{
 	background-color: $footer-bck;
 	color: white;
-    @include global-sidepadding();
-	padding-bottom: 30px;
-    padding-top:25px;
+	padding: 25px 20px 30px 20px;
+	
 	@include desktop-res{
 		text-align: center;
-		h3{
-			font-size: 2em;
-		}
 	}
-	ul{
-		li{
-			margin-bottom: 10px;
-			i{
-				width:25px;
-			}
-			a{
-				@include basiclinkdisplay($footer-bck);
-			}
-			em{
-				font-weight: bold;
-				font-style: none;
-			}
+
+	li{
+		margin-bottom: 10px;
+		i{
+			width:25px;
+		}
+		a{
+			@include basiclinkdisplay($footer-bck);
+		}
+		em{
+			font-weight: bold;
+			font-style: none;
 		}
 	}
 }

@@ -4,6 +4,8 @@ $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0; 
 
 $footer-bck:rgba(50,50,50,1);
+$light-background: rgb(245,245,245);
+$shadow-light:rgb(220,220,220);
 
 /*Polices*/
 $text-font: "Roboto";
@@ -14,12 +16,7 @@ $decalage-top-img: -65px;
 $accueil-mobile-restautantheight: 250px;
 $homepage-mobile-imgheight: 175px;
 
+$bplist: (mobile:600px, tablet:1280px);
 
-$bplist: (mobile:600px, tablet:1024px);
-
-/*vvvaaaarrrrs*/
+/**/
 $validationdiv-width:60px;
-
-
-$light-background: rgb(245,245,245);
-$shadow-light:rgb(220,220,220);

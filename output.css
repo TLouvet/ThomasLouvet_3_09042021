@@ -3,10 +3,10 @@
 /*Couleurs*/
 /*Polices*/
 /**/
-/*vvvaaaarrrrs*/
+/**/
 /*Code pour utiliser un display flex et les alignements nécessaires, tout est centré par défaut*/
-/******Potentiellement à revoir****/
 /* utility classes*/
+/**Les noms des restaurants, le logo header et footer*/
 .special-title {
   font-family: "Shrikhand";
   font-weight: normal;
@@ -20,9 +20,34 @@
 
 /*sur la version pc il y a un petit espace blanc et la hauteur doit être appliquée sur le paragraphe plutôt que l'image
 qui fera elle 100% du paragraphe*/
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1280px) {
   .img-container {
     height: 400px;
+  }
+}
+
+/**Sur les pages de restaurants, le trait en dessous des titres de catégories de plats **/
+.undertitle {
+  margin: 5px 0 15px 0;
+  height: 3px;
+  width: 40px;
+  background-color: #99E2D0;
+}
+
+/**Titre logo footer desktop**/
+@media screen and (min-width: 1280px) {
+  .--bigdesktop {
+    font-size: 2em;
+  }
+}
+
+/**utilisé dans les pages de restaurants pour endcadrer les sections entrées / plats / desserts **/
+@media screen and (min-width: 1280px) {
+  .sections-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: unset;
+    flex-direction: row;
   }
 }
 
@@ -31,17 +56,14 @@ header {
   display: flex;
   justify-content: inherit;
   align-items: center;
-  /*devrait changer en fonction du bp*/
-  padding: 0 20px;
-  /*ça c'est clairement moche*/
+  flex-direction: row;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 5px 5px #c3c3c3;
   margin: auto;
+  box-shadow: 0 5px 5px #c3c3c3;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1280px) {
   header {
     box-shadow: unset;
   }
@@ -53,7 +75,7 @@ header h1 {
   margin: auto;
 }
 
-/* body */
+/* body - éléments généraux sur tout le site*/
 body {
   font-family: "Roboto";
   margin: 0;
@@ -72,12 +94,12 @@ img {
   object-fit: cover;
   width: 100%;
 }
-@media screen and (min-width: 600px) and (max-width: 1024px) {
+@media screen and (min-width: 600px) and (max-width: 1279px) {
   img {
     height: 350px;
   }
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1280px) {
   img {
     height: 100%;
   }
@@ -88,33 +110,27 @@ Footer global utilisé dans chaque page du site*/
 footer {
   background-color: #323232;
   color: white;
-  /*devrait changer en fonction du bp*/
-  padding: 0 20px;
-  padding-bottom: 30px;
-  padding-top: 25px;
+  padding: 25px 20px 30px 20px;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1280px) {
   footer {
     text-align: center;
   }
-  footer h3 {
-    font-size: 2em;
-  }
 }
-footer ul li {
+footer li {
   margin-bottom: 10px;
 }
-footer ul li i {
+footer li i {
   width: 25px;
 }
-footer ul li a {
+footer li a {
   text-decoration: none;
   color: white;
 }
-footer ul li a:hover {
+footer li a:hover {
   color: #9356DC;
 }
-footer ul li em {
+footer li em {
   font-weight: bold;
   font-style: none;
 }
@@ -130,7 +146,7 @@ Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe
   border-radius: 50px 50px 0 0;
   background-color: whitesmoke;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1280px) {
   .main__restaurants {
     top: 0;
     margin-bottom: 0;
@@ -141,6 +157,7 @@ Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  flex-direction: row;
   padding: 40px 35px 35px 20px;
   font-size: 1.7em;
 }
@@ -150,14 +167,21 @@ Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe
 .main__restaurants section {
   padding-bottom: 35px;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1280px) {
   .main__restaurants section {
     width: 30%;
   }
 }
 
+/**Titre de chaque section dans les pages des restaurants => ENTREES / PLATS / DESSERTS **/
+.main__title {
+  margin-left: 20px;
+}
+.main__title h2 {
+  font-weight: normal;
+}
+
 /*component*/
-/* --> mainitem*/
 /* hearts.scss
 
 Code qui gère tous les coeurs du site avec l'animation de remplissage*/
@@ -209,9 +233,9 @@ button {
   color: white;
   cursor: pointer;
   padding: 15px 25px;
-  margin: 35px 0 70px 0;
+  margin: 20px 0 60px 0;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1280px) {
   button {
     margin-bottom: 35px;
   }
@@ -221,141 +245,19 @@ button:hover {
   box-shadow: 0 5px 5px #c3c3c3;
 }
 
-/*pages*/
-/*accueil-reservation.scss
+/***** Carte affichant un item du menu pour chaque restaurant
 
-code utilisé seulement sur la page d'accueil hors animation*/
-@media screen and (min-width: 1025px) {
-  .main {
-    width: 95%;
-    margin: auto;
-  }
-}
+Exemple : 
 
-#reservation {
-  background-color: whitesmoke;
-  text-align: center;
-  padding: 45px 20px 55px 20px;
-}
-@media screen and (min-width: 1025px) {
-  #reservation {
-    padding-bottom: 0;
-    border-radius: 20px;
-  }
-}
+Filet de boeuf
+Spécialité du chef      35€   <validation>  
 
-.localisation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  background-color: gainsboro;
-}
-@media screen and (min-width: 1025px) {
-  .localisation {
-    border-radius: 20px;
-    box-shadow: 0 3px 10px gainsboro;
-    position: relative;
-    width: 20%;
-    margin: auto;
-    justify-content: flex-start;
-  }
-}
-.localisation > i {
-  width: 30px;
-}
-@media screen and (min-width: 1025px) {
-  .localisation > i {
-    margin-right: 25px;
-  }
-}
-
-.loadspin {
-  background: linear-gradient(#FF79DA, #9356DC);
-  position: fixed;
-  z-index: 2;
-  left: 0;
-  opacity: 0.8;
-  animation: spinner 1000ms ease-in-out forwards;
-  animation-delay: 1000ms;
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.loadspin__text {
-  font-family: "Shrikhand";
-  text-shadow: 2px 2px 2px #99E2D0;
-  font-size: 3em;
-  animation: txtappear 1s ease-in-out;
-  margin-bottom: 15px;
-  opacity: 1;
-}
-.loadspin__circle {
-  width: 70px;
-  height: 70px;
-  border-top: 5px solid #FF79DA;
-  border-bottom: 5px solid #99E2D0;
-  border-radius: 100px;
-  animation: circlerot 1500ms linear infinite;
-  margin-bottom: 40px;
-}
-
-@keyframes txtappear {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(30vh);
-  }
-}
-@keyframes circlerot {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spinner {
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-/*useless, à mettre dans une classe util*/
-@media screen and (min-width: 1025px) {
-  .HOPHOPHOP {
-    background-color: whitesmoke;
-    padding-top: 30px;
-    border-radius: 20px;
-    box-shadow: 0 5px 10px gainsboro;
-  }
-}
-
-.main {
-  /*Pages des restaurants*/
-}
-.main__title {
-  margin-left: 20px;
-}
-.main__title h2 {
-  font-weight: normal;
-}
-.main__title .undertitle {
-  margin-top: 5px;
-  margin-bottom: 15px;
-  height: 3px;
-  width: 40px;
-  background-color: #99E2D0;
-}
+***/
 .main__item {
-  /****/
   display: flex;
   justify-content: space-between;
-  /*****/
+  align-items: flex-end;
+  flex-direction: row;
   background-color: white;
   box-shadow: 0 0 10px gainsboro;
   margin: 15px;
@@ -363,251 +265,7 @@ code utilisé seulement sur la page d'accueil hors animation*/
   padding: 15px 20px 15px 10px;
   position: relative;
   overflow: hidden;
-  /****/
-  /*****/
-}
-.main__item h3 {
-  width: 93%;
-  margin-bottom: 5px;
-}
-.main__item__description {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-direction: column;
-  transition: margin 300ms, width 300ms;
-}
-.main__item__description p {
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 0.95em;
-  width: 93%;
-}
-.main__item .prix {
-  display: flex;
-  align-items: flex-end;
-  font-weight: bold;
-  transition: margin 300ms;
-}
-.main__item .validation {
-  background-color: #99E2D0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 60px;
-  height: 100%;
-  border-radius: 0 20px 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*affichage icone centrale*/
-  color: white;
-  overflow: hidden;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 300ms ease-in-out;
-}
-.main__item .validation i {
-  transition: transform 300ms ease-out;
-  transition-delay: 200ms;
-}
-.main__item:hover .prix {
-  margin-right: 60px;
-}
-.main__item:hover .main__item__description {
-  margin-right: -60px;
-  width: 70%;
-}
-.main__item:hover h3, .main__item:hover p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-}
-.main__item:hover h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.main__item:hover .validation {
-  transform: scaleX(1);
-}
-.main__item:hover .validation > i {
-  transform: rotate(360deg);
-}
-.main .fonctionnement {
-  /*devrait changer en fonction du bp*/
-  padding: 0 20px;
-  padding-top: 50px;
-  /*COULD BE ????*/
-  padding-bottom: 55px;
-}
-@media screen and (min-width: 1025px) {
-  .main .fonctionnement {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-}
-.main .fonctionnement h2 {
-  margin-top: 0;
-  margin-bottom: 25px;
-}
-@media screen and (min-width: 1025px) {
-  .main .fonctionnement h2 {
-    width: 100%;
-  }
-}
-.main .fonctionnement__card {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  height: 70px;
-  line-height: 70px;
-  border-radius: 20px;
-  background-color: whitesmoke;
-  box-shadow: 0 5px 10px gainsboro;
-  margin-bottom: 25px;
-  margin-left: 10px;
-  padding-left: 35px;
-}
-@media screen and (min-width: 1025px) {
-  .main .fonctionnement__card {
-    width: 28%;
-  }
-}
-.main .fonctionnement__card i {
-  color: grey;
-  width: 40px;
-}
-.main .fonctionnement__card:hover {
-  background-color: #f2eafb;
-}
-.main .fonctionnement__card:hover i {
-  color: #9356DC;
-}
-.main .fonctionnement__card p {
-  position: absolute;
-  left: -10px;
-  text-align: center;
-  line-height: 20px;
-  height: 20px;
-  width: 20px;
-  margin-top: 0;
-  background-color: #9356DC;
-  border-radius: 100px;
-  color: white;
-  font-size: 12px;
-}
-@media screen and (min-width: 1025px) {
-  .main .fonctionnement__cardwraper {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-.main #restaurants {
-  background-color: whitesmoke;
-  /*devrait changer en fonction du bp*/
-  padding: 0 20px;
-  padding-bottom: 55px;
-  padding-top: 50px;
-  /*COULD BE ???*/
-}
-.main #restaurants h2 {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-@media screen and (min-width: 1025px) {
-  .main #restaurants {
-    border-radius: 20px;
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    box-shadow: 0 0 10px gainsboro;
-  }
-}
-.main #restaurants .carte_restaurant {
-  height: 250px;
-  /*devrait potentiellement changer selon bp*/
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 0 10px gainsboro;
-  margin-bottom: 20px;
-  position: relative;
-}
-@media screen and (min-width: 1025px) {
-  .main #restaurants .carte_restaurant {
-    width: 23%;
-  }
-}
-@media screen and (min-width: 600px) and (max-width: 1024px) {
-  .main #restaurants .carte_restaurant {
-    width: 45%;
-  }
-}
-.main #restaurants .carte_restaurant a {
-  text-decoration: none;
-  color: black;
-}
-.main #restaurants .carte_restaurant a:hover {
-  color: #9356DC;
-}
-.main #restaurants .carte_restaurant i {
-  position: absolute;
-  right: 25px;
-  bottom: 25px;
-}
-.main #restaurants .carte_restaurant img {
-  height: 175px;
-  /*devrait changer selon bp*/
-  width: 100%;
-  border-radius: 20px 20px 0 0;
-  object-fit: cover;
-}
-.main #restaurants .carte_restaurant__txt {
-  /*devrait changer en fonction du bp*/
-  padding: 0 15px;
-  padding-top: 15px;
-}
-.main #restaurants .carte_restaurant__txt p {
-  margin-top: 5px;
-}
-.main #restaurants .carte_restaurant__nv {
-  position: absolute;
-  background-color: #99E2D0;
-  color: #217460;
-  border-radius: 5px;
-  width: 23.5%;
-  height: 30px;
-  top: 15px;
-  right: 4%;
-  text-align: center;
-  line-height: 30px;
-}
-@media screen and (min-width: 1025px) {
-  .main #restaurants .carte_restaurant__nv {
-    max-width: 75px;
-    width: 30%;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .main #restaurants .carte_restaurant__wraper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-@media screen and (min-width: 600px) and (max-width: 1024px) {
-  .main #restaurants .carte_restaurant__wraper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-.main__item {
+  /**Animation pour l'affichage des différentes cartes*/
   animation: apparition 1s ease-in-out forwards;
   opacity: 0;
 }
@@ -623,7 +281,47 @@ code utilisé seulement sur la page d'accueil hors animation*/
 .main__item:nth-child(5) {
   animation-delay: 0.7s;
 }
+.main__item h4 {
+  width: 93%;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main__item__description {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: column;
+  transition: margin 300ms, width 300ms;
+}
+.main__item__description p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.95em;
+  width: 93%;
+}
+.main__item:hover .prix {
+  margin-right: 60px;
+}
+.main__item:hover .main__item__description {
+  margin-right: -60px;
+  width: 70%;
+}
+.main__item:hover p, .main__item:hover h4 {
+  width: 100%;
+}
+.main__item:hover .validation {
+  transform: scaleX(1);
+}
+.main__item:hover .validation > i {
+  transform: rotate(360deg);
+}
 
+/***Effet lors de l'apparition des items**/
 @keyframes apparition {
   0% {
     opacity: 0;
@@ -635,10 +333,315 @@ code utilisé seulement sur la page d'accueil hors animation*/
     opacity: 1;
   }
 }
-@media screen and (min-width: 1025px) {
-  .sections-wrapper {
+/** Code spécifique au prix dans chaque item**/
+.prix {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+  font-weight: bold;
+  transition: margin 300ms;
+}
+
+/*****Part de la carte servant à valider le choix ***/
+.validation {
+  background-color: #99E2D0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /*affichage icone centrale*/
+  color: white;
+  overflow: hidden;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+.validation i {
+  transition: transform 300ms ease-out;
+  transition-delay: 200ms;
+}
+
+/**** nv.scss
+
+Encart nouveau, utilisé pour l'instant sur la page d'accueil pour mettre en avant les nouveaux restaurants **/
+.nv {
+  position: absolute;
+  background-color: #99E2D0;
+  color: #217460;
+  border-radius: 5px;
+  width: 23.5%;
+  height: 30px;
+  top: 15px;
+  right: 4%;
+  min-width: 65px;
+  max-width: 75px;
+  text-align: center;
+  line-height: 30px;
+}
+@media screen and (min-width: 1280px) {
+  .nv {
+    width: 30%;
+  }
+}
+
+.fonctionnement__cardwraper {
+  margin-top: 25px;
+}
+@media screen and (min-width: 1280px) {
+  .fonctionnement__cardwraper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+.fonctionnement__card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 0 5px 10px gainsboro;
+  margin: 0 0 25px 10px;
+  padding-left: 35px;
+}
+@media screen and (min-width: 1280px) {
+  .fonctionnement__card {
+    width: 28%;
+  }
+}
+.fonctionnement__card i {
+  color: grey;
+  width: 40px;
+}
+.fonctionnement__card:hover {
+  background-color: #f2eafb;
+}
+.fonctionnement__card:hover i {
+  color: #9356DC;
+}
+.fonctionnement__card__nbr {
+  position: absolute;
+  left: -10px;
+  text-align: center;
+  line-height: 20px;
+  height: 20px;
+  width: 20px;
+  margin-top: 0;
+  background-color: #9356DC;
+  border-radius: 100px;
+  color: white;
+  font-size: 12px;
+}
+
+/*** Sur la page d'accueil, les cartes présentant les restaurants ***/
+.carte_restaurant {
+  height: 250px;
+  /*devrait potentiellement changer selon bp*/
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px gainsboro;
+  margin-bottom: 20px;
+  position: relative;
+}
+@media screen and (min-width: 1280px) {
+  .carte_restaurant {
+    width: 23%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .carte_restaurant {
+    width: 45%;
+  }
+}
+.carte_restaurant__wraper {
+  padding-top: 30px;
+}
+@media screen and (min-width: 1280px) {
+  .carte_restaurant__wraper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .carte_restaurant__wraper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.carte_restaurant a {
+  text-decoration: none;
+  color: black;
+}
+.carte_restaurant a:hover {
+  color: #9356DC;
+}
+.carte_restaurant i {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+.carte_restaurant img {
+  height: 175px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+}
+.carte_restaurant__txt {
+  padding: 15px 15px 0 15px;
+}
+.carte_restaurant__txt p {
+  margin-top: 5px;
+}
+
+/*pages*/
+/*accueil-reservation.scss
+
+code utilisé seulement sur la page d'accueil hors animation*/
+@media screen and (min-width: 1280px) {
+  .main {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .topside {
+    background-color: whitesmoke;
+    padding-top: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px gainsboro;
+  }
+}
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 20px;
+  background-color: gainsboro;
+}
+@media screen and (min-width: 1280px) {
+  .localisation {
+    border-radius: 20px;
+    box-shadow: 0 3px 10px gainsboro;
+    position: relative;
+    width: 20%;
+    margin: auto;
+    justify-content: flex-start;
+  }
+}
+.localisation > i {
+  width: 30px;
+}
+@media screen and (min-width: 1280px) {
+  .localisation > i {
+    margin-right: 25px;
+  }
+}
+
+#reservation {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 45px 20px 0 20px;
+}
+@media screen and (min-width: 1280px) {
+  #reservation {
+    border-radius: 20px;
+  }
+}
+
+.fonctionnement {
+  padding: 50px 20px 55px 20px;
+}
+@media screen and (min-width: 1280px) {
+  .fonctionnement {
+    padding: 30px 20px;
+  }
+}
+
+#restaurants {
+  background-color: whitesmoke;
+  padding: 50px 20px 55px 20px;
+}
+@media screen and (min-width: 1280px) {
+  #restaurants {
+    border-radius: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    box-shadow: 0 0 10px gainsboro;
+  }
+}
+
+.loadspin {
+  background: linear-gradient(#FF79DA, #9356DC);
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  opacity: 0.8;
+  animation: fondu 1000ms ease-in-out forwards;
+  animation-delay: 1000ms;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loadspin__text {
+  font-family: "Shrikhand";
+  text-shadow: 2px 2px 2px #99E2D0;
+  font-size: 3em;
+  animation: txtappear 1s ease-in-out;
+  margin-bottom: 15px;
+}
+.loadspin__circle {
+  width: 70px;
+  height: 70px;
+  border-top: 5px solid #FF79DA;
+  border-bottom: 5px solid #99E2D0;
+  border-radius: 100px;
+  animation: spinner 1500ms linear infinite;
+  margin-bottom: 40px;
+}
+
+@keyframes txtappear {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(30vh);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fondu {
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

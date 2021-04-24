@@ -1,0 +1,46 @@
+/*** Sur la page d'accueil, les cartes présentant les restaurants ***/ 
+
+.carte_restaurant{
+    height:$accueil-mobile-restautantheight; /*devrait potentiellement changer selon bp*/
+    background-color: white;
+    border-radius: 20px;
+    box-shadow:0 0 10px $shadow-light;
+    margin-bottom: 20px;
+    position: relative;
+    @include desktop-res{
+        width: 23%;
+    }
+    @include tablet-res{
+        width:45%;
+    }
+    &__wraper{
+        padding-top:30px;
+        @include desktop-res{
+            @include flexdisplay(space-between);
+        }
+        @include tablet-res{
+            @include flexdisplay(space-around);
+            flex-wrap: wrap;
+        }
+    }
+    a{
+        @include basiclinkdisplay(white);		
+    }
+    i{
+        position: absolute;
+        right:25px;
+        bottom:25px;
+    }
+    img{
+        height:$homepage-mobile-imgheight;
+        width:100%;
+        border-radius: 20px 20px 0 0;
+        object-fit: cover;
+    }
+    &__txt{
+        padding: 15px 15px 0 15px;
+        p{
+            margin-top:5px;
+        }
+    }
+}

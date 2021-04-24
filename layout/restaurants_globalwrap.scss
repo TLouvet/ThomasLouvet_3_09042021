@@ -31,5 +31,13 @@ Sur les pages dédiées au restaurants, main__restaurants est la div qui englobe
 	}
 }
 
-
+/**Titre de chaque section dans les pages des restaurants => ENTREES / PLATS / DESSERTS **/
+.main{
+	&__title{
+		margin-left:20px;
+		h2{
+			font-weight: normal;
+		}
+	}
+}
 

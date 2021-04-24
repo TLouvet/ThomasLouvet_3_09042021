@@ -8,14 +8,13 @@
 	}
 }
 
-#reservation{
-	background-color: $light-background;
-	text-align: center;
-	padding: 45px 20px 55px 20px;
-	@include desktop-res{
-		padding-bottom: 0;
-		border-radius: 20px;
-	}
+.topside{ 
+    @include desktop-res{
+        background-color: $light-background;
+        padding-top: 30px;
+        border-radius: 20px;
+		box-shadow: 0 5px 10px $shadow-light;
+    }
 }
 
 .localisation{
@@ -35,5 +34,32 @@
 		@include desktop-res{
 			margin-right: 25px;
 		}
+	}
+}
+
+#reservation{
+	background-color: $light-background;
+	text-align: center;
+	padding: 45px 20px 0 20px;
+	@include desktop-res{
+		border-radius: 20px;
+	}
+}
+
+.fonctionnement{
+	padding: 50px 20px 55px 20px;
+	@include desktop-res{
+		padding: 30px 20px;
+	}
+}
+
+#restaurants{
+	background-color: $light-background;
+	padding:50px 20px 55px 20px; 
+	@include desktop-res{
+		border-radius: 20px;
+		margin-bottom: 40px;
+		padding-bottom: 30px;
+		box-shadow: 0 0 10px $shadow-light;
 	}
 }

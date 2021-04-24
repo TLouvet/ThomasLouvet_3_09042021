@@ -1,0 +1,25 @@
+/**** nv.scss
+
+Encart nouveau, utilisé pour l'instant sur la page d'accueil pour mettre en avant les nouveaux restaurants **/
+
+.nv{
+    position: absolute;
+    background-color: $tertiary-color;
+    color: darken($tertiary-color,45%);
+    border-radius: 5px;
+   
+    width: 23.5%;
+    height: 30px;
+
+    top:15px;
+    right:4%;
+
+    min-width: 65px;
+    max-width: 75px;
+
+    text-align: center;
+    line-height: 30px;
+    @include desktop-res{
+        width: 30%;
+    }
+}
