@@ -36,14 +36,14 @@ qui fera elle 100% du paragraphe*/
 
 /**Titre logo footer desktop**/
 @media screen and (min-width: 1280px) {
-  .--bigdesktop {
+  .bigdesktop {
     font-size: 2em;
   }
 }
 
 /**utilisé dans les pages de restaurants pour endcadrer les sections entrées / plats / desserts **/
 @media screen and (min-width: 1280px) {
-  .sections-wrapper {
+  .sections_wrapper {
     display: flex;
     justify-content: space-between;
     align-items: unset;
@@ -132,7 +132,7 @@ footer li a:hover {
 }
 footer li em {
   font-weight: bold;
-  font-style: none;
+  font-style: normal;
 }
 
 /* main_restaurants.scss 
@@ -243,6 +243,13 @@ button {
 button:hover {
   opacity: 0.75;
   box-shadow: 0 5px 5px #c3c3c3;
+}
+button > a {
+  text-decoration: none;
+  color: white;
+}
+button > a:hover {
+  color: #9356DC;
 }
 
 /***** Carte affichant un item du menu pour chaque restaurant
@@ -448,7 +455,6 @@ Encart nouveau, utilisé pour l'instant sur la page d'accueil pour mettre en ava
 /*** Sur la page d'accueil, les cartes présentant les restaurants ***/
 .carte_restaurant {
   height: 250px;
-  /*devrait potentiellement changer selon bp*/
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 0 10px gainsboro;
@@ -625,9 +631,6 @@ code utilisé seulement sur la page d'accueil hors animation*/
 @keyframes txtappear {
   0% {
     transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(30vh);
   }
 }
 @keyframes spinner {

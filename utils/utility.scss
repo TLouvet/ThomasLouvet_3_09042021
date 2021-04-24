@@ -29,14 +29,14 @@ qui fera elle 100% du paragraphe*/
 }
 
 /**Titre logo footer desktop**/
-.--bigdesktop{
+.bigdesktop{
     @include desktop-res{
 		font-size: 2em;
 	}
 }
 
 /**utilisé dans les pages de restaurants pour endcadrer les sections entrées / plats / desserts **/
-.sections-wrapper{
+.sections_wrapper{
 	@include desktop-res{
 		@include flexdisplay(space-between,unset);
 	}

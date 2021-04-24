@@ -1,7 +1,7 @@
 /*** Sur la page d'accueil, les cartes présentant les restaurants ***/ 
 
 .carte_restaurant{
-    height:$accueil-mobile-restautantheight; /*devrait potentiellement changer selon bp*/
+    height:$accueil-mobile-restautantheight; 
     background-color: white;
     border-radius: 20px;
     box-shadow:0 0 10px $shadow-light;
