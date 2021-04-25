@@ -617,7 +617,8 @@ code utilisé seulement sur la page d'accueil hors animation*/
   border-top: 5px solid #FF79DA;
   border-bottom: 5px solid #99E2D0;
   border-radius: 100px;
-  animation: spinner 1500ms linear infinite;
+  animation: spinner 1500ms linear;
+  animation-iteration-count: 3;
   margin-bottom: 40px;
 }
 
