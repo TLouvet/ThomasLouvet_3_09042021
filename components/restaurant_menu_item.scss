@@ -36,6 +36,11 @@ Spécialité du chef      35€   <validation>
             animation-delay: 0.7s;
         }
 
+        @include tablet-res{
+            width: 75%;
+            margin: 15px auto 15px auto;
+        }
+
         h4{
             width: 93%;
             margin-bottom: 5px;
@@ -58,6 +63,7 @@ Spécialité du chef      35€   <validation>
             }
         }
         &:hover{ 
+            cursor: pointer;
                 .prix{ 
                     margin-right: $validationdiv-width;
                 }

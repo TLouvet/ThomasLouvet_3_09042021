@@ -116,6 +116,11 @@ footer {
   footer {
     text-align: center;
   }
+  footer ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
 }
 footer li {
   margin-bottom: 10px;
@@ -281,6 +286,12 @@ Spécialité du chef      35€   <validation>
 .main__item:nth-child(5) {
   animation-delay: 0.7s;
 }
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .main__item {
+    width: 75%;
+    margin: 15px auto 15px auto;
+  }
+}
 .main__item h4 {
   width: 93%;
   margin-bottom: 5px;
@@ -303,6 +314,9 @@ Spécialité du chef      35€   <validation>
   text-overflow: ellipsis;
   font-size: 0.95em;
   width: 93%;
+}
+.main__item:hover {
+  cursor: pointer;
 }
 .main__item:hover .prix {
   margin-right: 60px;
@@ -402,6 +416,14 @@ Encart nouveau, utilisé pour l'instant sur la page d'accueil pour mettre en ava
     flex-direction: row;
   }
 }
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .fonctionnement__cardwraper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 .fonctionnement__card {
   display: flex;
   justify-content: flex-start;
@@ -419,6 +441,11 @@ Encart nouveau, utilisé pour l'instant sur la page d'accueil pour mettre en ava
 @media screen and (min-width: 1280px) {
   .fonctionnement__card {
     width: 28%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .fonctionnement__card {
+    width: 50%;
   }
 }
 .fonctionnement__card i {
@@ -572,6 +599,7 @@ code utilisé seulement sur la page d'accueil hors animation*/
 }
 @media screen and (min-width: 1280px) {
   .fonctionnement {
+    margin-top: 25px;
     padding: 30px 20px;
   }
 }
@@ -583,7 +611,7 @@ code utilisé seulement sur la page d'accueil hors animation*/
 @media screen and (min-width: 1280px) {
   #restaurants {
     border-radius: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 55px;
     padding-bottom: 30px;
     box-shadow: 0 0 10px gainsboro;
   }

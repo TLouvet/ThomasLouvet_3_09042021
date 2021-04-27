@@ -49,6 +49,7 @@
 .fonctionnement{
 	padding: 50px 20px 55px 20px;
 	@include desktop-res{
+		margin-top: 25px;
 		padding: 30px 20px;
 	}
 }
@@ -58,7 +59,7 @@
 	padding:50px 20px 55px 20px; 
 	@include desktop-res{
 		border-radius: 20px;
-		margin-bottom: 40px;
+		margin-bottom: 55px;
 		padding-bottom: 30px;
 		box-shadow: 0 0 10px $shadow-light;
 	}

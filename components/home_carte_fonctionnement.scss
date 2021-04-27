@@ -4,11 +4,17 @@
         @include desktop-res{
             @include flexdisplay(space-around);
         }
+        @include tablet-res{
+            @include flexdisplay(space-between,center,column);
+        }
     }
     &__card{
         @include flexdisplay(flex-start);
         @include desktop-res{
             width: 28%;
+        }
+        @include tablet-res{
+            width: 50%;
         }
         position: relative;
         height:70px;
