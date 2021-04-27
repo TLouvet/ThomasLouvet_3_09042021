@@ -20,7 +20,8 @@ Les Fonctionnalités attendues :
 - Au survol des items des menus, un check apparait
 - Lors du chargement des pages de restaurants, les menus apparaissent en fade-in.
 
-Langages utilisés : HMTL & CSS (Sass)
-Validation au W3C complète
-IDE : Visual Studio Code
-Compatibilité testée sur Chrome 90 et Firefox 88
+Tech:
+- Langages utilisés : HMTL & CSS (Sass)
+- Validation au W3C complète
+- IDE : Visual Studio Code
+- Compatibilité testée sur Chrome 90 et Firefox 88
