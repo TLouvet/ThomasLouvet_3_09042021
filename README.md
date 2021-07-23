@@ -21,7 +21,7 @@ Les Fonctionnalités attendues :
 - Lors du chargement des pages de restaurants, les menus apparaissent en fade-in.
 
 Tech:
-- Langages utilisés : HMTL & CSS (Sass)
+- Langages utilisés : HTML & CSS (Sass)
 - Validation au W3C complète
 - IDE : Visual Studio Code
 - Compatibilité testée sur Chrome 90 et Firefox 88
